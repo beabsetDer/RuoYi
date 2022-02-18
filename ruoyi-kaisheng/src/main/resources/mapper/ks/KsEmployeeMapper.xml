@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.kaisheng.mapper.KsEmployeeMapper">
+    
+    <resultMap type="KsEmployee" id="KsEmployeeResult">
+        <result property="id"    column="id"    />
+        <result property="employeeId"    column="employee_id"    />
+        <result property="name"    column="name"    />
+        <result property="aka"    column="aka"    />
+        <result property="phoneNumber"    column="phone_number"    />
+        <result property="idCard"    column="id_card"    />
+        <result property="sex"    column="sex"    />
+        <result property="homeTelephoneNumber"    column="home_telephone_number"    />
+        <result property="address"    column="address"    />
+        <result property="company"    column="company"    />
+        <result property="staffPositions"    column="staff_positions"    />
+        <result property="entryDate"    column="entry_date"    />
+        <result property="resignationDate"    column="resignation_date"    />
+        <result property="reasonForLeaving"    column="reason_for_leaving"    />
+    </resultMap>
+
+    <sql id="selectKsEmployeeVo">
+        select id, employee_id, name, aka, phone_number, id_card, sex, home_telephone_number, address, company, staff_positions, entry_date, resignation_date, reason_for_leaving from ks_employee
+    </sql>
+
+    <select id="selectKsEmployeeList" parameterType="KsEmployee" resultMap="KsEmployeeResult">
+        <include refid="selectKsEmployeeVo"/>
+        <where>  
+            <if test="employeeId != null  and employeeId != ''"> and employee_id = #{employeeId}</if>
+            <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
+            <if test="aka != null  and aka != ''"> and aka like concat('%', #{aka}, '%')</if>
+            <if test="phoneNumber != null  and phoneNumber != ''"> and phone_number like concat('%', #{phoneNumber}, '%')</if>
+            <if test="idCard != null  and idCard != ''"> and id_card = #{idCard}</if>
+            <if test="sex != null  and sex != ''"> and sex like concat('%', #{sex}, '%')</if>
+            <if test="homeTelephoneNumber != null  and homeTelephoneNumber != ''"> and home_telephone_number = #{homeTelephoneNumber}</if>
+            <if test="address != null  and address != ''"> and address like concat('%', #{address}, '%')</if>
+            <if test="company != null  and company != ''"> and company like concat('%', #{company}, '%')</if>
+            <if test="staffPositions != null  and staffPositions != ''"> and staff_positions like concat('%', #{staffPositions}, '%')</if>
+            <if test="entryDate != null "> and entry_date = #{entryDate}</if>
+            <if test="resignationDate != null "> and resignation_date = #{resignationDate}</if>
+            <if test="reasonForLeaving != null  and reasonForLeaving != ''"> and reason_for_leaving = #{reasonForLeaving}</if>
+        </where>
+    </select>
+    
+    <select id="selectKsEmployeeById" parameterType="Integer" resultMap="KsEmployeeResult">
+        <include refid="selectKsEmployeeVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertKsEmployee" parameterType="KsEmployee" useGeneratedKeys="true" keyProperty="id">
+        insert into ks_employee
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="employeeId != null and employeeId != ''">employee_id,</if>
+            <if test="name != null">name,</if>
+            <if test="aka != null">aka,</if>
+            <if test="phoneNumber != null">phone_number,</if>
+            <if test="idCard != null">id_card,</if>
+            <if test="sex != null">sex,</if>
+            <if test="homeTelephoneNumber != null">home_telephone_number,</if>
+            <if test="address != null">address,</if>
+            <if test="company != null">company,</if>
+            <if test="staffPositions != null">staff_positions,</if>
+            <if test="entryDate != null">entry_date,</if>
+            <if test="resignationDate != null">resignation_date,</if>
+            <if test="reasonForLeaving != null">reason_for_leaving,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="employeeId != null and employeeId != ''">#{employeeId},</if>
+            <if test="name != null">#{name},</if>
+            <if test="aka != null">#{aka},</if>
+            <if test="phoneNumber != null">#{phoneNumber},</if>
+            <if test="idCard != null">#{idCard},</if>
+            <if test="sex != null">#{sex},</if>
+            <if test="homeTelephoneNumber != null">#{homeTelephoneNumber},</if>
+            <if test="address != null">#{address},</if>
+            <if test="company != null">#{company},</if>
+            <if test="staffPositions != null">#{staffPositions},</if>
+            <if test="entryDate != null">#{entryDate},</if>
+            <if test="resignationDate != null">#{resignationDate},</if>
+            <if test="reasonForLeaving != null">#{reasonForLeaving},</if>
+         </trim>
+    </insert>
+
+    <update id="updateKsEmployee" parameterType="KsEmployee">
+        update ks_employee
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="employeeId != null and employeeId != ''">employee_id = #{employeeId},</if>
+            <if test="name != null">name = #{name},</if>
+            <if test="aka != null">aka = #{aka},</if>
+            <if test="phoneNumber != null">phone_number = #{phoneNumber},</if>
+            <if test="idCard != null">id_card = #{idCard},</if>
+            <if test="sex != null">sex = #{sex},</if>
+            <if test="homeTelephoneNumber != null">home_telephone_number = #{homeTelephoneNumber},</if>
+            <if test="address != null">address = #{address},</if>
+            <if test="company != null">company = #{company},</if>
+            <if test="staffPositions != null">staff_positions = #{staffPositions},</if>
+            <if test="entryDate != null">entry_date = #{entryDate},</if>
+            <if test="resignationDate != null">resignation_date = #{resignationDate},</if>
+            <if test="reasonForLeaving != null">reason_for_leaving = #{reasonForLeaving},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteKsEmployeeById" parameterType="Integer">
+        delete from ks_employee where id = #{id}
+    </delete>
+
+    <delete id="deleteKsEmployeeByIds" parameterType="String">
+        delete from ks_employee where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

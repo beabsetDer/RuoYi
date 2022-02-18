@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <th:block th:include="include :: header('修改南下表單')" />
+    <th:block th:include="include :: datetimepicker-css" />
+</head>
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+        <form class="form-horizontal m" id="form-downbound-edit" th:object="${ksDownbound}">
+            <input name="id" th:field="*{id}" type="hidden">
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">南下單編號：</label>
+                <div class="col-sm-8">
+                    <input name="downboundId" th:field="*{downboundId}" class="form-control" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">日期(南下單)：</label>
+                <div class="col-sm-8">
+                    <div class="input-group date">
+                        <input name="downboundDate" th:value="${#dates.format(ksDownbound.downboundDate, 'yyyy-MM-dd')}" class="form-control" placeholder="yyyy-MM-dd" type="text" required>
+                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">司機名稱：</label>
+                <div class="col-sm-8">
+                    <input name="downboundDriver" th:field="*{downboundDriver}" class="form-control" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">車牌號碼：</label>
+                <div class="col-sm-8">
+                    <input name="downboundLicensePlateNumber" th:field="*{downboundLicensePlateNumber}" class="form-control" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">公司名稱：</label>
+                <div class="col-sm-8">
+                    <input name="downboundCompany" th:field="*{downboundCompany}" class="form-control" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">起點：</label>
+                <div class="col-sm-8">
+                    <input name="downboundOutset" th:field="*{downboundOutset}" class="form-control" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">堆場：</label>
+                <div class="col-sm-8">
+                    <input name="downboundYard" th:field="*{downboundYard}" class="form-control" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">現金：</label>
+                <div class="col-sm-8">
+                    <input name="downboundCash" th:field="*{downboundCash}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">貨物名稱：</label>
+                <div class="col-sm-8">
+                    <input name="downboundGoods" th:field="*{downboundGoods}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">貨物噸數：</label>
+                <div class="col-sm-8">
+                    <input name="downboundGoodsMt" th:field="*{downboundGoodsMt}" class="form-control" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">貨物單價：</label>
+                <div class="col-sm-8">
+                    <input name="downboundGoodsPrice" th:field="*{downboundGoodsPrice}" class="form-control" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">此趟運費：</label>
+                <div class="col-sm-8">
+                    <input name="downboundTotal" th:field="*{downboundTotal}" class="form-control" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">此趟薪資：</label>
+                <div class="col-sm-8">
+                    <input name="downboundDriverPay" th:field="*{downboundDriverPay}" class="form-control" type="text" required>
+                </div>
+            </div>
+        </form>
+    </div>
+    <th:block th:include="include :: footer" />
+    <th:block th:include="include :: datetimepicker-js" />
+    <script th:inline="javascript">
+        var prefix = ctx + "ks/downbound";
+        $("#form-downbound-edit").validate({
+            focusCleanup: true
+        });
+
+        function submitHandler() {
+            if ($.validate.form()) {
+                $.operate.save(prefix + "/edit", $('#form-downbound-edit').serialize());
+            }
+        }
+
+        $("input[name='downboundDate']").datetimepicker({
+            format: "yyyy-mm-dd",
+            minView: "month",
+            autoclose: true
+        });
+    </script>
+</body>
+</html>

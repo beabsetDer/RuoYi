@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.kaisheng.mapper.KsGonorthMapper">
+    
+    <resultMap type="KsGonorth" id="KsGonorthResult">
+        <result property="id"    column="id"    />
+        <result property="gonorthId"    column="gonorth_id"    />
+        <result property="gonorthDate"    column="gonorth_date"    />
+        <result property="gonorthDriver"    column="gonorth_driver"    />
+        <result property="gonorthLicensePlateNumber"    column="gonorth_license_plate_number"    />
+        <result property="gonorthCompany"    column="gonorth_company"    />
+        <result property="gonorthOutset"    column="gonorth_outset"    />
+        <result property="gonorthYard"    column="gonorth_yard"    />
+        <result property="gonorthCash"    column="gonorth_cash"    />
+        <result property="gonorthGoods"    column="gonorth_goods"    />
+        <result property="gonorthGoodsMt"    column="gonorth_goods_mt"    />
+        <result property="gonorthGoodsPriceCompany"    column="gonorth_goods_price_company"    />
+        <result property="gonorthGoodsPriceDriver"    column="gonorth_goods_price_driver"    />
+        <result property="gonorthTotal"    column="gonorth_total"    />
+        <result property="gonorthBillTotal"    column="gonorth_bill_total"    />
+        <result property="gonorthDriverPay"    column="gonorth_driver_pay"    />
+    </resultMap>
+
+    <sql id="selectKsGonorthVo">
+        select id, gonorth_id, gonorth_date, gonorth_driver, gonorth_license_plate_number, gonorth_company, gonorth_outset, gonorth_yard, gonorth_cash, gonorth_goods, gonorth_goods_mt, gonorth_goods_price_company, gonorth_goods_price_driver, gonorth_total, gonorth_bill_total, gonorth_driver_pay from ks_gonorth
+    </sql>
+
+    <select id="selectKsGonorthList" parameterType="KsGonorth" resultMap="KsGonorthResult">
+        <include refid="selectKsGonorthVo"/>
+        <where>  
+            <if test="gonorthId != null  and gonorthId != ''"> and gonorth_id = #{gonorthId}</if>
+            <if test="gonorthDate != null "> and gonorth_date = #{gonorthDate}</if>
+            <if test="gonorthDriver != null  and gonorthDriver != ''"> and gonorth_driver like concat('%', #{gonorthDriver}, '%')</if>
+            <if test="gonorthLicensePlateNumber != null  and gonorthLicensePlateNumber != ''"> and gonorth_license_plate_number like concat('%', #{gonorthLicensePlateNumber}, '%')</if>
+            <if test="gonorthCompany != null  and gonorthCompany != ''"> and gonorth_company = #{gonorthCompany}</if>
+            <if test="gonorthOutset != null  and gonorthOutset != ''"> and gonorth_outset = #{gonorthOutset}</if>
+            <if test="gonorthYard != null  and gonorthYard != ''"> and gonorth_yard = #{gonorthYard}</if>
+            <if test="gonorthCash != null  and gonorthCash != ''"> and gonorth_cash = #{gonorthCash}</if>
+            <if test="gonorthGoods != null  and gonorthGoods != ''"> and gonorth_goods = #{gonorthGoods}</if>
+            <if test="gonorthGoodsMt != null "> and gonorth_goods_mt = #{gonorthGoodsMt}</if>
+            <if test="gonorthGoodsPriceCompany != null "> and gonorth_goods_price_company = #{gonorthGoodsPriceCompany}</if>
+            <if test="gonorthGoodsPriceDriver != null "> and gonorth_goods_price_driver = #{gonorthGoodsPriceDriver}</if>
+            <if test="gonorthTotal != null "> and gonorth_total = #{gonorthTotal}</if>
+            <if test="gonorthBillTotal != null "> and gonorth_bill_total = #{gonorthBillTotal}</if>
+            <if test="gonorthDriverPay != null "> and gonorth_driver_pay = #{gonorthDriverPay}</if>
+        </where>
+    </select>
+    
+    <select id="selectKsGonorthById" parameterType="Integer" resultMap="KsGonorthResult">
+        <include refid="selectKsGonorthVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertKsGonorth" parameterType="KsGonorth" useGeneratedKeys="true" keyProperty="id">
+        insert into ks_gonorth
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="gonorthId != null and gonorthId != ''">gonorth_id,</if>
+            <if test="gonorthDate != null">gonorth_date,</if>
+            <if test="gonorthDriver != null and gonorthDriver != ''">gonorth_driver,</if>
+            <if test="gonorthLicensePlateNumber != null and gonorthLicensePlateNumber != ''">gonorth_license_plate_number,</if>
+            <if test="gonorthCompany != null and gonorthCompany != ''">gonorth_company,</if>
+            <if test="gonorthOutset != null and gonorthOutset != ''">gonorth_outset,</if>
+            <if test="gonorthYard != null and gonorthYard != ''">gonorth_yard,</if>
+            <if test="gonorthCash != null">gonorth_cash,</if>
+            <if test="gonorthGoods != null">gonorth_goods,</if>
+            <if test="gonorthGoodsMt != null">gonorth_goods_mt,</if>
+            <if test="gonorthGoodsPriceCompany != null">gonorth_goods_price_company,</if>
+            <if test="gonorthGoodsPriceDriver != null">gonorth_goods_price_driver,</if>
+            <if test="gonorthTotal != null">gonorth_total,</if>
+            <if test="gonorthBillTotal != null">gonorth_bill_total,</if>
+            <if test="gonorthDriverPay != null">gonorth_driver_pay,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="gonorthId != null and gonorthId != ''">#{gonorthId},</if>
+            <if test="gonorthDate != null">#{gonorthDate},</if>
+            <if test="gonorthDriver != null and gonorthDriver != ''">#{gonorthDriver},</if>
+            <if test="gonorthLicensePlateNumber != null and gonorthLicensePlateNumber != ''">#{gonorthLicensePlateNumber},</if>
+            <if test="gonorthCompany != null and gonorthCompany != ''">#{gonorthCompany},</if>
+            <if test="gonorthOutset != null and gonorthOutset != ''">#{gonorthOutset},</if>
+            <if test="gonorthYard != null and gonorthYard != ''">#{gonorthYard},</if>
+            <if test="gonorthCash != null">#{gonorthCash},</if>
+            <if test="gonorthGoods != null">#{gonorthGoods},</if>
+            <if test="gonorthGoodsMt != null">#{gonorthGoodsMt},</if>
+            <if test="gonorthGoodsPriceCompany != null">#{gonorthGoodsPriceCompany},</if>
+            <if test="gonorthGoodsPriceDriver != null">#{gonorthGoodsPriceDriver},</if>
+            <if test="gonorthTotal != null">#{gonorthTotal},</if>
+            <if test="gonorthBillTotal != null">#{gonorthBillTotal},</if>
+            <if test="gonorthDriverPay != null">#{gonorthDriverPay},</if>
+         </trim>
+    </insert>
+
+    <update id="updateKsGonorth" parameterType="KsGonorth">
+        update ks_gonorth
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="gonorthId != null and gonorthId != ''">gonorth_id = #{gonorthId},</if>
+            <if test="gonorthDate != null">gonorth_date = #{gonorthDate},</if>
+            <if test="gonorthDriver != null and gonorthDriver != ''">gonorth_driver = #{gonorthDriver},</if>
+            <if test="gonorthLicensePlateNumber != null and gonorthLicensePlateNumber != ''">gonorth_license_plate_number = #{gonorthLicensePlateNumber},</if>
+            <if test="gonorthCompany != null and gonorthCompany != ''">gonorth_company = #{gonorthCompany},</if>
+            <if test="gonorthOutset != null and gonorthOutset != ''">gonorth_outset = #{gonorthOutset},</if>
+            <if test="gonorthYard != null and gonorthYard != ''">gonorth_yard = #{gonorthYard},</if>
+            <if test="gonorthCash != null">gonorth_cash = #{gonorthCash},</if>
+            <if test="gonorthGoods != null">gonorth_goods = #{gonorthGoods},</if>
+            <if test="gonorthGoodsMt != null">gonorth_goods_mt = #{gonorthGoodsMt},</if>
+            <if test="gonorthGoodsPriceCompany != null">gonorth_goods_price_company = #{gonorthGoodsPriceCompany},</if>
+            <if test="gonorthGoodsPriceDriver != null">gonorth_goods_price_driver = #{gonorthGoodsPriceDriver},</if>
+            <if test="gonorthTotal != null">gonorth_total = #{gonorthTotal},</if>
+            <if test="gonorthBillTotal != null">gonorth_bill_total = #{gonorthBillTotal},</if>
+            <if test="gonorthDriverPay != null">gonorth_driver_pay = #{gonorthDriverPay},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteKsGonorthById" parameterType="Integer">
+        delete from ks_gonorth where id = #{id}
+    </delete>
+
+    <delete id="deleteKsGonorthByIds" parameterType="String">
+        delete from ks_gonorth where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

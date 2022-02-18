@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.kaisheng.mapper.KsGoodsMapper">
+    
+    <resultMap type="KsGoods" id="KsGoodsResult">
+        <result property="id"    column="id"    />
+        <result property="goodsId"    column="goods_id"    />
+        <result property="goodsName"    column="goods_name"    />
+    </resultMap>
+
+    <sql id="selectKsGoodsVo">
+        select id, goods_id, goods_name from ks_goods
+    </sql>
+
+    <select id="selectKsGoodsList" parameterType="KsGoods" resultMap="KsGoodsResult">
+        <include refid="selectKsGoodsVo"/>
+        <where>  
+            <if test="goodsId != null  and goodsId != ''"> and goods_id = #{goodsId}</if>
+            <if test="goodsName != null  and goodsName != ''"> and goods_name like concat('%', #{goodsName}, '%')</if>
+        </where>
+    </select>
+    
+    <select id="selectKsGoodsById" parameterType="Integer" resultMap="KsGoodsResult">
+        <include refid="selectKsGoodsVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertKsGoods" parameterType="KsGoods" useGeneratedKeys="true" keyProperty="id">
+        insert into ks_goods
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="goodsId != null and goodsId != ''">goods_id,</if>
+            <if test="goodsName != null">goods_name,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="goodsId != null and goodsId != ''">#{goodsId},</if>
+            <if test="goodsName != null">#{goodsName},</if>
+         </trim>
+    </insert>
+
+    <update id="updateKsGoods" parameterType="KsGoods">
+        update ks_goods
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="goodsId != null and goodsId != ''">goods_id = #{goodsId},</if>
+            <if test="goodsName != null">goods_name = #{goodsName},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteKsGoodsById" parameterType="Integer">
+        delete from ks_goods where id = #{id}
+    </delete>
+
+    <delete id="deleteKsGoodsByIds" parameterType="String">
+        delete from ks_goods where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

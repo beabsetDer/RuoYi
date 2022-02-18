@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.kaisheng.mapper.KsCarMapper">
+    
+    <resultMap type="KsCar" id="KsCarResult">
+        <result property="id"    column="id"    />
+        <result property="licensePlateNumber"    column="license_plate_number"    />
+        <result property="carIdle"    column="car_idle"    />
+        <result property="carPurchaseDate"    column="car_purchase_date"    />
+        <result property="carLoan"    column="car_loan"    />
+        <result property="carMaintenanceDate"    column="car_maintenance_date"    />
+        <result property="nextMaintenanceDate"    column="next_maintenance_date"    />
+        <result property="carMaintenance"    column="car_maintenance"    />
+    </resultMap>
+
+    <sql id="selectKsCarVo">
+        select id, license_plate_number, car_idle, car_purchase_date, car_loan, car_maintenance_date, next_maintenance_date, car_maintenance from ks_car
+    </sql>
+
+    <select id="selectKsCarList" parameterType="KsCar" resultMap="KsCarResult">
+        <include refid="selectKsCarVo"/>
+        <where>  
+            <if test="licensePlateNumber != null  and licensePlateNumber != ''"> and license_plate_number = #{licensePlateNumber}</if>
+            <if test="carIdle != null  and carIdle != ''"> and car_idle = #{carIdle}</if>
+            <if test="carPurchaseDate != null "> and car_purchase_date = #{carPurchaseDate}</if>
+            <if test="carLoan != null  and carLoan != ''"> and car_loan = #{carLoan}</if>
+            <if test="carMaintenanceDate != null "> and car_maintenance_date = #{carMaintenanceDate}</if>
+            <if test="nextMaintenanceDate != null "> and next_maintenance_date = #{nextMaintenanceDate}</if>
+            <if test="carMaintenance != null  and carMaintenance != ''"> and car_maintenance = #{carMaintenance}</if>
+        </where>
+    </select>
+    
+    <select id="selectKsCarById" parameterType="Integer" resultMap="KsCarResult">
+        <include refid="selectKsCarVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertKsCar" parameterType="KsCar">
+        insert into ks_car
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="licensePlateNumber != null and licensePlateNumber != ''">license_plate_number,</if>
+            <if test="carIdle != null and carIdle != ''">car_idle,</if>
+            <if test="carPurchaseDate != null">car_purchase_date,</if>
+            <if test="carLoan != null">car_loan,</if>
+            <if test="carMaintenanceDate != null">car_maintenance_date,</if>
+            <if test="nextMaintenanceDate != null">next_maintenance_date,</if>
+            <if test="carMaintenance != null">car_maintenance,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="licensePlateNumber != null and licensePlateNumber != ''">#{licensePlateNumber},</if>
+            <if test="carIdle != null and carIdle != ''">#{carIdle},</if>
+            <if test="carPurchaseDate != null">#{carPurchaseDate},</if>
+            <if test="carLoan != null">#{carLoan},</if>
+            <if test="carMaintenanceDate != null">#{carMaintenanceDate},</if>
+            <if test="nextMaintenanceDate != null">#{nextMaintenanceDate},</if>
+            <if test="carMaintenance != null">#{carMaintenance},</if>
+         </trim>
+    </insert>
+
+    <update id="updateKsCar" parameterType="KsCar">
+        update ks_car
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="licensePlateNumber != null and licensePlateNumber != ''">license_plate_number = #{licensePlateNumber},</if>
+            <if test="carIdle != null and carIdle != ''">car_idle = #{carIdle},</if>
+            <if test="carPurchaseDate != null">car_purchase_date = #{carPurchaseDate},</if>
+            <if test="carLoan != null">car_loan = #{carLoan},</if>
+            <if test="carMaintenanceDate != null">car_maintenance_date = #{carMaintenanceDate},</if>
+            <if test="nextMaintenanceDate != null">next_maintenance_date = #{nextMaintenanceDate},</if>
+            <if test="carMaintenance != null">car_maintenance = #{carMaintenance},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteKsCarById" parameterType="Integer">
+        delete from ks_car where id = #{id}
+    </delete>
+
+    <delete id="deleteKsCarByIds" parameterType="String">
+        delete from ks_car where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

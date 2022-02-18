@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.kaisheng.mapper.KsOilOrderMapper">
+    
+    <resultMap type="KsOilOrder" id="KsOilOrderResult">
+        <result property="id"    column="id"    />
+        <result property="oilOrderId"    column="oil_order_id"    />
+        <result property="oidDate"    column="oid_date"    />
+        <result property="oilDriver"    column="oil_driver"    />
+        <result property="oilLicensePlateNumber"    column="oil_license_plate_number"    />
+        <result property="oilType"    column="oil_type"    />
+        <result property="oilPrice"    column="oil_price"    />
+        <result property="oilLiters"    column="oil_liters"    />
+        <result property="oilTotal"    column="oil_total"    />
+        <result property="gasStation"    column="gas_station"    />
+    </resultMap>
+
+    <sql id="selectKsOilOrderVo">
+        select id, oil_order_id, oid_date, oil_driver, oil_license_plate_number, oil_type, oil_price, oil_liters, oil_total, gas_station from ks_oil_order
+    </sql>
+
+    <select id="selectKsOilOrderList" parameterType="KsOilOrder" resultMap="KsOilOrderResult">
+        <include refid="selectKsOilOrderVo"/>
+        <where>  
+            <if test="oilOrderId != null  and oilOrderId != ''"> and oil_order_id = #{oilOrderId}</if>
+            <if test="oidDate != null "> and oid_date = #{oidDate}</if>
+            <if test="oilDriver != null  and oilDriver != ''"> and oil_driver = #{oilDriver}</if>
+            <if test="oilLicensePlateNumber != null  and oilLicensePlateNumber != ''"> and oil_license_plate_number = #{oilLicensePlateNumber}</if>
+            <if test="oilType != null  and oilType != ''"> and oil_type = #{oilType}</if>
+            <if test="oilPrice != null "> and oil_price = #{oilPrice}</if>
+            <if test="oilLiters != null "> and oil_liters = #{oilLiters}</if>
+            <if test="oilTotal != null "> and oil_total = #{oilTotal}</if>
+            <if test="gasStation != null  and gasStation != ''"> and gas_station = #{gasStation}</if>
+        </where>
+    </select>
+    
+    <select id="selectKsOilOrderById" parameterType="Integer" resultMap="KsOilOrderResult">
+        <include refid="selectKsOilOrderVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertKsOilOrder" parameterType="KsOilOrder" useGeneratedKeys="true" keyProperty="id">
+        insert into ks_oil_order
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="oilOrderId != null and oilOrderId != ''">oil_order_id,</if>
+            <if test="oidDate != null">oid_date,</if>
+            <if test="oilDriver != null and oilDriver != ''">oil_driver,</if>
+            <if test="oilLicensePlateNumber != null and oilLicensePlateNumber != ''">oil_license_plate_number,</if>
+            <if test="oilType != null and oilType != ''">oil_type,</if>
+            <if test="oilPrice != null">oil_price,</if>
+            <if test="oilLiters != null">oil_liters,</if>
+            <if test="oilTotal != null">oil_total,</if>
+            <if test="gasStation != null">gas_station,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="oilOrderId != null and oilOrderId != ''">#{oilOrderId},</if>
+            <if test="oidDate != null">#{oidDate},</if>
+            <if test="oilDriver != null and oilDriver != ''">#{oilDriver},</if>
+            <if test="oilLicensePlateNumber != null and oilLicensePlateNumber != ''">#{oilLicensePlateNumber},</if>
+            <if test="oilType != null and oilType != ''">#{oilType},</if>
+            <if test="oilPrice != null">#{oilPrice},</if>
+            <if test="oilLiters != null">#{oilLiters},</if>
+            <if test="oilTotal != null">#{oilTotal},</if>
+            <if test="gasStation != null">#{gasStation},</if>
+         </trim>
+    </insert>
+
+    <update id="updateKsOilOrder" parameterType="KsOilOrder">
+        update ks_oil_order
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="oilOrderId != null and oilOrderId != ''">oil_order_id = #{oilOrderId},</if>
+            <if test="oidDate != null">oid_date = #{oidDate},</if>
+            <if test="oilDriver != null and oilDriver != ''">oil_driver = #{oilDriver},</if>
+            <if test="oilLicensePlateNumber != null and oilLicensePlateNumber != ''">oil_license_plate_number = #{oilLicensePlateNumber},</if>
+            <if test="oilType != null and oilType != ''">oil_type = #{oilType},</if>
+            <if test="oilPrice != null">oil_price = #{oilPrice},</if>
+            <if test="oilLiters != null">oil_liters = #{oilLiters},</if>
+            <if test="oilTotal != null">oil_total = #{oilTotal},</if>
+            <if test="gasStation != null">gas_station = #{gasStation},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteKsOilOrderById" parameterType="Integer">
+        delete from ks_oil_order where id = #{id}
+    </delete>
+
+    <delete id="deleteKsOilOrderByIds" parameterType="String">
+        delete from ks_oil_order where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

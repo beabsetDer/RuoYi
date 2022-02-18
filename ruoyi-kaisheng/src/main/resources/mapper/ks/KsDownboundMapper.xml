@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.kaisheng.mapper.KsDownboundMapper">
+    
+    <resultMap type="KsDownbound" id="KsDownboundResult">
+        <result property="id"    column="id"    />
+        <result property="downboundId"    column="downbound_id"    />
+        <result property="downboundDate"    column="downbound_date"    />
+        <result property="downboundDriver"    column="downbound_driver"    />
+        <result property="downboundLicensePlateNumber"    column="downbound_license_plate_number"    />
+        <result property="downboundCompany"    column="downbound_company"    />
+        <result property="downboundOutset"    column="downbound_outset"    />
+        <result property="downboundYard"    column="downbound_yard"    />
+        <result property="downboundCash"    column="downbound_cash"    />
+        <result property="downboundGoods"    column="downbound_goods"    />
+        <result property="downboundGoodsMt"    column="downbound_goods_mt"    />
+        <result property="downboundGoodsPrice"    column="downbound_goods_price"    />
+        <result property="downboundTotal"    column="downbound_total"    />
+        <result property="downboundDriverPay"    column="downbound_driver_pay"    />
+    </resultMap>
+
+    <sql id="selectKsDownboundVo">
+        select id, downbound_id, downbound_date, downbound_driver, downbound_license_plate_number, downbound_company, downbound_outset, downbound_yard, downbound_cash, downbound_goods, downbound_goods_mt, downbound_goods_price, downbound_total, downbound_driver_pay from ks_downbound
+    </sql>
+
+    <select id="selectKsDownboundList" parameterType="KsDownbound" resultMap="KsDownboundResult">
+        <include refid="selectKsDownboundVo"/>
+        <where>  
+            <if test="downboundId != null  and downboundId != ''"> and downbound_id = #{downboundId}</if>
+            <if test="downboundDate != null "> and downbound_date = #{downboundDate}</if>
+            <if test="downboundDriver != null  and downboundDriver != ''"> and downbound_driver like concat('%', #{downboundDriver}, '%')</if>
+            <if test="downboundLicensePlateNumber != null  and downboundLicensePlateNumber != ''"> and downbound_license_plate_number like concat('%', #{downboundLicensePlateNumber}, '%')</if>
+            <if test="downboundCompany != null  and downboundCompany != ''"> and downbound_company = #{downboundCompany}</if>
+            <if test="downboundOutset != null  and downboundOutset != ''"> and downbound_outset like concat('%', #{downboundOutset}, '%')</if>
+            <if test="downboundYard != null  and downboundYard != ''"> and downbound_yard like concat('%', #{downboundYard}, '%')</if>
+            <if test="downboundCash != null  and downboundCash != ''"> and downbound_cash = #{downboundCash}</if>
+            <if test="downboundGoods != null  and downboundGoods != ''"> and downbound_goods = #{downboundGoods}</if>
+            <if test="downboundGoodsMt != null "> and downbound_goods_mt = #{downboundGoodsMt}</if>
+            <if test="downboundGoodsPrice != null "> and downbound_goods_price = #{downboundGoodsPrice}</if>
+            <if test="downboundTotal != null "> and downbound_total = #{downboundTotal}</if>
+            <if test="downboundDriverPay != null "> and downbound_driver_pay = #{downboundDriverPay}</if>
+        </where>
+    </select>
+    
+    <select id="selectKsDownboundById" parameterType="Integer" resultMap="KsDownboundResult">
+        <include refid="selectKsDownboundVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertKsDownbound" parameterType="KsDownbound" useGeneratedKeys="true" keyProperty="id">
+        insert into ks_downbound
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="downboundId != null and downboundId != ''">downbound_id,</if>
+            <if test="downboundDate != null">downbound_date,</if>
+            <if test="downboundDriver != null and downboundDriver != ''">downbound_driver,</if>
+            <if test="downboundLicensePlateNumber != null and downboundLicensePlateNumber != ''">downbound_license_plate_number,</if>
+            <if test="downboundCompany != null and downboundCompany != ''">downbound_company,</if>
+            <if test="downboundOutset != null and downboundOutset != ''">downbound_outset,</if>
+            <if test="downboundYard != null and downboundYard != ''">downbound_yard,</if>
+            <if test="downboundCash != null">downbound_cash,</if>
+            <if test="downboundGoods != null">downbound_goods,</if>
+            <if test="downboundGoodsMt != null">downbound_goods_mt,</if>
+            <if test="downboundGoodsPrice != null">downbound_goods_price,</if>
+            <if test="downboundTotal != null">downbound_total,</if>
+            <if test="downboundDriverPay != null">downbound_driver_pay,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="downboundId != null and downboundId != ''">#{downboundId},</if>
+            <if test="downboundDate != null">#{downboundDate},</if>
+            <if test="downboundDriver != null and downboundDriver != ''">#{downboundDriver},</if>
+            <if test="downboundLicensePlateNumber != null and downboundLicensePlateNumber != ''">#{downboundLicensePlateNumber},</if>
+            <if test="downboundCompany != null and downboundCompany != ''">#{downboundCompany},</if>
+            <if test="downboundOutset != null and downboundOutset != ''">#{downboundOutset},</if>
+            <if test="downboundYard != null and downboundYard != ''">#{downboundYard},</if>
+            <if test="downboundCash != null">#{downboundCash},</if>
+            <if test="downboundGoods != null">#{downboundGoods},</if>
+            <if test="downboundGoodsMt != null">#{downboundGoodsMt},</if>
+            <if test="downboundGoodsPrice != null">#{downboundGoodsPrice},</if>
+            <if test="downboundTotal != null">#{downboundTotal},</if>
+            <if test="downboundDriverPay != null">#{downboundDriverPay},</if>
+         </trim>
+    </insert>
+
+    <update id="updateKsDownbound" parameterType="KsDownbound">
+        update ks_downbound
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="downboundId != null and downboundId != ''">downbound_id = #{downboundId},</if>
+            <if test="downboundDate != null">downbound_date = #{downboundDate},</if>
+            <if test="downboundDriver != null and downboundDriver != ''">downbound_driver = #{downboundDriver},</if>
+            <if test="downboundLicensePlateNumber != null and downboundLicensePlateNumber != ''">downbound_license_plate_number = #{downboundLicensePlateNumber},</if>
+            <if test="downboundCompany != null and downboundCompany != ''">downbound_company = #{downboundCompany},</if>
+            <if test="downboundOutset != null and downboundOutset != ''">downbound_outset = #{downboundOutset},</if>
+            <if test="downboundYard != null and downboundYard != ''">downbound_yard = #{downboundYard},</if>
+            <if test="downboundCash != null">downbound_cash = #{downboundCash},</if>
+            <if test="downboundGoods != null">downbound_goods = #{downboundGoods},</if>
+            <if test="downboundGoodsMt != null">downbound_goods_mt = #{downboundGoodsMt},</if>
+            <if test="downboundGoodsPrice != null">downbound_goods_price = #{downboundGoodsPrice},</if>
+            <if test="downboundTotal != null">downbound_total = #{downboundTotal},</if>
+            <if test="downboundDriverPay != null">downbound_driver_pay = #{downboundDriverPay},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteKsDownboundById" parameterType="Integer">
+        delete from ks_downbound where id = #{id}
+    </delete>
+
+    <delete id="deleteKsDownboundByIds" parameterType="String">
+        delete from ks_downbound where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>
