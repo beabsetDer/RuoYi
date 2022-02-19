@@ -12,9 +12,10 @@ import com.ruoyi.common.core.controller.BaseController;
 public class KsShowDataController extends BaseController {
 	private String prefix = "ks/showdata";
 
-	@RequiresPermissions("ks:showdata:view")
+	// @RequiresPermissions("ks:showdata")
 	@GetMapping()
 	public String showdata() {
+		System.out.println("TTTTTTTTTTTT");
 		return prefix + "/showdata";
 	}
 }

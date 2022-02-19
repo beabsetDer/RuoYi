@@ -21,13 +21,13 @@ public class KsGonorth extends BaseEntity
     /** 流水號 */
     private Integer id;
 
-    /** 南下單編號 */
-    @Excel(name = "南下單編號")
+    /** 北上單編號 */
+    @Excel(name = "北上單編號")
     private String gonorthId;
 
-    /** 日期(南下單) */
+    /** 日期(北上單) */
     @JsonFormat(pattern = "yyyy-MM-dd")
-    @Excel(name = "日期(南下單)", width = 30, dateFormat = "yyyy-MM-dd")
+    @Excel(name = "日期(北上單)", width = 30, dateFormat = "yyyy-MM-dd")
     private Date gonorthDate;
 
     /** 司機名稱 */

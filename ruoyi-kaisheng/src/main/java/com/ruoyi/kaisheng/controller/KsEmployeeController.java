@@ -27,101 +27,94 @@ import com.ruoyi.common.core.page.TableDataInfo;
  */
 @Controller
 @RequestMapping("/ks/employee")
-public class KsEmployeeController extends BaseController
-{
-    private String prefix = "ks/employee";
+public class KsEmployeeController extends BaseController {
+	private String prefix = "ks/employee";
 
-    @Autowired
-    private IKsEmployeeService ksEmployeeService;
+	@Autowired
+	private IKsEmployeeService ksEmployeeService;
 
-    @RequiresPermissions("ks:employee:view")
-    @GetMapping()
-    public String employee()
-    {
-        return prefix + "/employee";
-    }
+	@RequiresPermissions("ks:employee:view")
+	@GetMapping()
+	public String employee() {
+		// System.out.println("employee");
+		return prefix + "/employee";
+	}
 
-    /**
-     * 查询員工表單列表
-     */
-    @RequiresPermissions("ks:employee:list")
-    @PostMapping("/list")
-    @ResponseBody
-    public TableDataInfo list(KsEmployee ksEmployee)
-    {
-        startPage();
-        List<KsEmployee> list = ksEmployeeService.selectKsEmployeeList(ksEmployee);
-        return getDataTable(list);
-    }
+	/**
+	 * 查询員工表單列表
+	 */
+	@RequiresPermissions("ks:employee:list")
+	@PostMapping("/list")
+	@ResponseBody
+	public TableDataInfo list(KsEmployee ksEmployee) {
+		// System.out.println("list");
+		startPage();
+		List<KsEmployee> list = ksEmployeeService.selectKsEmployeeList(ksEmployee);
+		return getDataTable(list);
+	}
 
-    /**
-     * 导出員工表單列表
-     */
-    @RequiresPermissions("ks:employee:export")
-    @Log(title = "員工表單", businessType = BusinessType.EXPORT)
-    @PostMapping("/export")
-    @ResponseBody
-    public AjaxResult export(KsEmployee ksEmployee)
-    {
-        List<KsEmployee> list = ksEmployeeService.selectKsEmployeeList(ksEmployee);
-        ExcelUtil<KsEmployee> util = new ExcelUtil<KsEmployee>(KsEmployee.class);
-        return util.exportExcel(list, "員工表單数据");
-    }
+	/**
+	 * 导出員工表單列表
+	 */
+	@RequiresPermissions("ks:employee:export")
+	@Log(title = "員工表單", businessType = BusinessType.EXPORT)
+	@PostMapping("/export")
+	@ResponseBody
+	public AjaxResult export(KsEmployee ksEmployee) {
+		List<KsEmployee> list = ksEmployeeService.selectKsEmployeeList(ksEmployee);
+		ExcelUtil<KsEmployee> util = new ExcelUtil<KsEmployee>(KsEmployee.class);
+		return util.exportExcel(list, "員工表單数据");
+	}
 
-    /**
-     * 新增員工表單
-     */
-    @GetMapping("/add")
-    public String add()
-    {
-        return prefix + "/add";
-    }
+	/**
+	 * 新增員工表單
+	 */
+	@GetMapping("/add")
+	public String add() {
+		return prefix + "/add";
+	}
 
-    /**
-     * 新增保存員工表單
-     */
-    @RequiresPermissions("ks:employee:add")
-    @Log(title = "員工表單", businessType = BusinessType.INSERT)
-    @PostMapping("/add")
-    @ResponseBody
-    public AjaxResult addSave(KsEmployee ksEmployee)
-    {
-        return toAjax(ksEmployeeService.insertKsEmployee(ksEmployee));
-    }
+	/**
+	 * 新增保存員工表單
+	 */
+	@RequiresPermissions("ks:employee:add")
+	@Log(title = "員工表單", businessType = BusinessType.INSERT)
+	@PostMapping("/add")
+	@ResponseBody
+	public AjaxResult addSave(KsEmployee ksEmployee) {
+		return toAjax(ksEmployeeService.insertKsEmployee(ksEmployee));
+	}
 
-    /**
-     * 修改員工表單
-     */
-    @RequiresPermissions("ks:employee:edit")
-    @GetMapping("/edit/{id}")
-    public String edit(@PathVariable("id") Integer id, ModelMap mmap)
-    {
-        KsEmployee ksEmployee = ksEmployeeService.selectKsEmployeeById(id);
-        mmap.put("ksEmployee", ksEmployee);
-        return prefix + "/edit";
-    }
+	/**
+	 * 修改員工表單
+	 */
+	@RequiresPermissions("ks:employee:edit")
+	@GetMapping("/edit/{id}")
+	public String edit(@PathVariable("id") Integer id, ModelMap mmap) {
+		KsEmployee ksEmployee = ksEmployeeService.selectKsEmployeeById(id);
+		mmap.put("ksEmployee", ksEmployee);
+		return prefix + "/edit";
+	}
 
-    /**
-     * 修改保存員工表單
-     */
-    @RequiresPermissions("ks:employee:edit")
-    @Log(title = "員工表單", businessType = BusinessType.UPDATE)
-    @PostMapping("/edit")
-    @ResponseBody
-    public AjaxResult editSave(KsEmployee ksEmployee)
-    {
-        return toAjax(ksEmployeeService.updateKsEmployee(ksEmployee));
-    }
+	/**
+	 * 修改保存員工表單
+	 */
+	@RequiresPermissions("ks:employee:edit")
+	@Log(title = "員工表單", businessType = BusinessType.UPDATE)
+	@PostMapping("/edit")
+	@ResponseBody
+	public AjaxResult editSave(KsEmployee ksEmployee) {
+		return toAjax(ksEmployeeService.updateKsEmployee(ksEmployee));
+	}
 
-    /**
-     * 删除員工表單
-     */
-    @RequiresPermissions("ks:employee:remove")
-    @Log(title = "員工表單", businessType = BusinessType.DELETE)
-    @PostMapping( "/remove")
-    @ResponseBody
-    public AjaxResult remove(String ids)
-    {
-        return toAjax(ksEmployeeService.deleteKsEmployeeByIds(ids));
-    }
+	/**
+	 * 删除員工表單
+	 */
+	@RequiresPermissions("ks:employee:remove")
+	@Log(title = "員工表單", businessType = BusinessType.DELETE)
+	@PostMapping("/remove")
+	@ResponseBody
+	public AjaxResult remove(String ids) {
+		return toAjax(ksEmployeeService.deleteKsEmployeeByIds(ids));
+	}
 }
