@@ -4,7 +4,7 @@ Source Host     : localhost:3306
 Source Database : ry-fork
 Target Host     : localhost:3306
 Target Database : ry-fork
-Date: 2022-02-19 03:34:18
+Date: 2022-02-19 16:47:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -44,7 +44,7 @@ INSERT INTO `gen_table` VALUES ('3', 'ks_employee', '員工資訊', '', null, 'K
 INSERT INTO `gen_table` VALUES ('4', 'ks_oil_order', '加油單資訊', '', null, 'KsOilOrder', 'crud', 'com.ruoyi.kaisheng', 'ks', 'oil', '加油單表單', 'Sheng', '0', '/', '{\"parentMenuId\":\"2006\",\"treeName\":\"\",\"treeParentCode\":\"\",\"parentMenuName\":\"凱基系統\",\"treeCode\":\"\"}', 'admin', '2022-02-10 18:13:33', '', '2022-02-19 03:05:03', '');
 INSERT INTO `gen_table` VALUES ('5', 'ks_downbound', '南下單資訊', '', null, 'KsDownbound', 'crud', 'com.ruoyi.kaisheng', 'ks', 'downbound', '南下表單', 'Sheng', '0', '/', '{\"parentMenuId\":\"2006\",\"treeName\":\"\",\"treeParentCode\":\"\",\"parentMenuName\":\"凱基系統\",\"treeCode\":\"\"}', 'admin', '2022-02-11 16:33:44', '', '2022-02-19 02:53:53', '');
 INSERT INTO `gen_table` VALUES ('6', 'ks_car', '車輛資訊', '', null, 'KsCar', 'crud', 'com.ruoyi.kaisheng', 'ks', 'car', '車輛表單', 'Sheng', '0', '/', '{\"parentMenuId\":\"2006\",\"treeName\":\"\",\"treeParentCode\":\"\",\"parentMenuName\":\"凱基系統\",\"treeCode\":\"\"}', 'admin', '2022-02-11 22:17:37', '', '2022-02-19 03:08:14', '');
-INSERT INTO `gen_table` VALUES ('7', 'ks_gonorth', '北上單資訊', '', null, 'KsGonorth', 'crud', 'com.ruoyi.kaisheng', 'ks', 'gonorth', '北上表單', 'Sheng', '0', '/', '{\"parentMenuId\":\"2006\",\"treeName\":\"\",\"treeParentCode\":\"\",\"parentMenuName\":\"凱基系統\",\"treeCode\":\"\"}', 'admin', '2022-02-12 15:40:33', '', '2022-02-19 03:02:42', '');
+INSERT INTO `gen_table` VALUES ('7', 'ks_gonorth', '北上單資訊', '', null, 'KsGonorth', 'crud', 'com.ruoyi.kaisheng', 'ks', 'gonorth', '北上表單', 'Sheng', '0', '/', '{\"parentMenuId\":\"2006\",\"treeName\":\"\",\"treeParentCode\":\"\",\"parentMenuName\":\"凱基系統\",\"treeCode\":\"\"}', 'admin', '2022-02-12 15:40:33', '', '2022-02-19 16:46:28', '');
 
 -- ----------------------------
 -- Table structure for gen_table_column
@@ -128,22 +128,22 @@ INSERT INTO `gen_table_column` VALUES ('60', '6', 'car_maintenance_date', '保�
 INSERT INTO `gen_table_column` VALUES ('61', '6', 'next_maintenance_date', '下次保養日期', 'datetime', 'Date', 'nextMaintenanceDate', '0', '0', null, '1', '1', '1', '1', 'EQ', 'datetime', '', '7', 'admin', '2022-02-11 22:17:37', null, '2022-02-19 03:08:14');
 INSERT INTO `gen_table_column` VALUES ('62', '6', 'car_maintenance', '保養狀態', 'varchar(10)', 'String', 'carMaintenance', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', '', '8', 'admin', '2022-02-11 22:17:37', null, '2022-02-19 03:08:14');
 INSERT INTO `gen_table_column` VALUES ('63', '6', 'car_idle', '車輛狀況', 'varchar(10)', 'String', 'carIdle', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'select', 'ks_car_idle', '3', '', '2022-02-11 22:19:38', null, '2022-02-19 03:08:14');
-INSERT INTO `gen_table_column` VALUES ('64', '7', 'id', '流水號', 'int(10)', 'Integer', 'id', '1', '1', null, '1', null, null, null, 'EQ', 'input', '', '1', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 03:02:42');
-INSERT INTO `gen_table_column` VALUES ('65', '7', 'gonorth_id', '南下單編號', 'varchar(20)', 'String', 'gonorthId', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'input', '', '2', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 03:02:42');
-INSERT INTO `gen_table_column` VALUES ('66', '7', 'gonorth_date', '日期(南下單)', 'datetime', 'Date', 'gonorthDate', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'datetime', '', '3', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 03:02:42');
-INSERT INTO `gen_table_column` VALUES ('67', '7', 'gonorth_driver', '司機名稱', 'varchar(5)', 'String', 'gonorthDriver', '0', '0', '1', '1', '1', '1', '1', 'LIKE', 'input', '', '4', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 03:02:42');
-INSERT INTO `gen_table_column` VALUES ('68', '7', 'gonorth_license_plate_number', '車牌號碼', 'varchar(10)', 'String', 'gonorthLicensePlateNumber', '0', '0', '1', '1', '1', '1', '1', 'LIKE', 'input', '', '5', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 03:02:42');
-INSERT INTO `gen_table_column` VALUES ('69', '7', 'gonorth_company', '公司名稱', 'varchar(20)', 'String', 'gonorthCompany', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'input', '', '6', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 03:02:42');
-INSERT INTO `gen_table_column` VALUES ('70', '7', 'gonorth_outset', '起點', 'varchar(20)', 'String', 'gonorthOutset', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'input', '', '7', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 03:02:42');
-INSERT INTO `gen_table_column` VALUES ('71', '7', 'gonorth_yard', '堆場', 'varchar(20)', 'String', 'gonorthYard', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'input', '', '8', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 03:02:42');
-INSERT INTO `gen_table_column` VALUES ('72', '7', 'gonorth_cash', '是否收現金', 'varchar(4)', 'String', 'gonorthCash', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', '', '9', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 03:02:42');
-INSERT INTO `gen_table_column` VALUES ('73', '7', 'gonorth_goods', '貨物名稱', 'varchar(10)', 'String', 'gonorthGoods', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', '', '10', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 03:02:42');
-INSERT INTO `gen_table_column` VALUES ('74', '7', 'gonorth_goods_mt', '貨物噸數', 'double(4,2)', 'BigDecimal', 'gonorthGoodsMt', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'input', '', '11', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 03:02:42');
-INSERT INTO `gen_table_column` VALUES ('75', '7', 'gonorth_goods_price_company', '公司單價', 'double(6,2)', 'BigDecimal', 'gonorthGoodsPriceCompany', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'input', '', '12', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 03:02:42');
-INSERT INTO `gen_table_column` VALUES ('76', '7', 'gonorth_goods_price_driver', '司機單價', 'double(6,2)', 'BigDecimal', 'gonorthGoodsPriceDriver', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'input', '', '13', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 03:02:42');
-INSERT INTO `gen_table_column` VALUES ('77', '7', 'gonorth_total', '公司運費', 'double(8,2)', 'BigDecimal', 'gonorthTotal', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'input', '', '14', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 03:02:42');
-INSERT INTO `gen_table_column` VALUES ('78', '7', 'gonorth_bill_total', '扣發票金額', 'double(8,2)', 'BigDecimal', 'gonorthBillTotal', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'input', '', '15', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 03:02:42');
-INSERT INTO `gen_table_column` VALUES ('79', '7', 'gonorth_driver_pay', '此趟薪資', 'double(10,2)', 'BigDecimal', 'gonorthDriverPay', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'input', '', '16', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 03:02:42');
+INSERT INTO `gen_table_column` VALUES ('64', '7', 'id', '流水號', 'int(10)', 'Integer', 'id', '1', '1', null, '1', null, null, null, 'EQ', 'input', '', '1', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 16:46:28');
+INSERT INTO `gen_table_column` VALUES ('65', '7', 'gonorth_id', '北上單編號', 'varchar(20)', 'String', 'gonorthId', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'input', '', '2', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 16:46:28');
+INSERT INTO `gen_table_column` VALUES ('66', '7', 'gonorth_date', '日期(北上單)', 'datetime', 'Date', 'gonorthDate', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'datetime', '', '3', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 16:46:28');
+INSERT INTO `gen_table_column` VALUES ('67', '7', 'gonorth_driver', '司機名稱', 'varchar(5)', 'String', 'gonorthDriver', '0', '0', '1', '1', '1', '1', '1', 'LIKE', 'input', '', '4', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 16:46:28');
+INSERT INTO `gen_table_column` VALUES ('68', '7', 'gonorth_license_plate_number', '車牌號碼', 'varchar(10)', 'String', 'gonorthLicensePlateNumber', '0', '0', '1', '1', '1', '1', '1', 'LIKE', 'input', '', '5', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 16:46:28');
+INSERT INTO `gen_table_column` VALUES ('69', '7', 'gonorth_company', '公司名稱', 'varchar(20)', 'String', 'gonorthCompany', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'input', '', '6', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 16:46:28');
+INSERT INTO `gen_table_column` VALUES ('70', '7', 'gonorth_outset', '起點', 'varchar(20)', 'String', 'gonorthOutset', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'input', '', '7', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 16:46:28');
+INSERT INTO `gen_table_column` VALUES ('71', '7', 'gonorth_yard', '堆場', 'varchar(20)', 'String', 'gonorthYard', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'input', '', '8', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 16:46:28');
+INSERT INTO `gen_table_column` VALUES ('72', '7', 'gonorth_cash', '是否收現金', 'varchar(4)', 'String', 'gonorthCash', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', '', '9', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 16:46:28');
+INSERT INTO `gen_table_column` VALUES ('73', '7', 'gonorth_goods', '貨物名稱', 'varchar(10)', 'String', 'gonorthGoods', '0', '0', null, '1', '1', '1', '1', 'EQ', 'input', '', '10', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 16:46:28');
+INSERT INTO `gen_table_column` VALUES ('74', '7', 'gonorth_goods_mt', '貨物噸數', 'double(4,2)', 'BigDecimal', 'gonorthGoodsMt', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'input', '', '11', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 16:46:28');
+INSERT INTO `gen_table_column` VALUES ('75', '7', 'gonorth_goods_price_company', '公司單價', 'double(6,2)', 'BigDecimal', 'gonorthGoodsPriceCompany', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'input', '', '12', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 16:46:28');
+INSERT INTO `gen_table_column` VALUES ('76', '7', 'gonorth_goods_price_driver', '司機單價', 'double(6,2)', 'BigDecimal', 'gonorthGoodsPriceDriver', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'input', '', '13', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 16:46:28');
+INSERT INTO `gen_table_column` VALUES ('77', '7', 'gonorth_total', '公司運費', 'double(8,2)', 'BigDecimal', 'gonorthTotal', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'input', '', '14', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 16:46:28');
+INSERT INTO `gen_table_column` VALUES ('78', '7', 'gonorth_bill_total', '扣發票金額', 'double(8,2)', 'BigDecimal', 'gonorthBillTotal', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'input', '', '15', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 16:46:28');
+INSERT INTO `gen_table_column` VALUES ('79', '7', 'gonorth_driver_pay', '此趟薪資', 'double(10,2)', 'BigDecimal', 'gonorthDriverPay', '0', '0', '1', '1', '1', '1', '1', 'EQ', 'input', '', '16', 'admin', '2022-02-12 15:40:33', null, '2022-02-19 16:46:28');
 
 -- ----------------------------
 -- Table structure for ks_car
@@ -215,12 +215,15 @@ CREATE TABLE `ks_downbound` (
   `downbound_driver_pay` double(10,2) NOT NULL DEFAULT '0.00' COMMENT '此趟薪資',
   PRIMARY KEY (`id`),
   UNIQUE KEY `downbound_id` (`downbound_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ks_downbound
 -- ----------------------------
-INSERT INTO `ks_downbound` VALUES ('1', '20202020', '2022-02-11 00:00:00', '黃振凱', 'AKA-878', 'ZZ', 'GG', 'XX', '無', 'WWW', '36.50', '850.00', '31025.00', '7135.75');
+INSERT INTO `ks_downbound` VALUES ('1', '22021801', '2022-02-18 00:00:00', '黃智凱', 'KSC-0803', '鴻海', '台北', '彰化', '無', '土', '36.50', '850.00', '31025.00', '7135.75');
+INSERT INTO `ks_downbound` VALUES ('2', '22021802', '2022-02-18 00:00:00', '李政儒', 'KSC-0805', '亞泥', '新竹', '雲林', '無', '泥土', '30.00', '700.00', '21000.00', '4830.00');
+INSERT INTO `ks_downbound` VALUES ('3', '22021901', '2022-02-19 00:00:00', '黃智凱', 'KSC-0803', '亞泥', '新竹', '雲林', '無', '泥土', '35.00', '800.00', '28000.00', '6440.00');
+INSERT INTO `ks_downbound` VALUES ('4', '22021902', '2022-02-19 00:00:00', '李政儒', 'KSC-0805', '鴻海', '台北', '彰化', '無', '土', '36.50', '820.00', '29930.00', '6883.90');
 
 -- ----------------------------
 -- Table structure for ks_employee
@@ -279,8 +282,8 @@ INSERT INTO `ks_employee` VALUES ('24', 'ks-24', '陳建伯', '藍寶', '0971-91
 DROP TABLE IF EXISTS `ks_gonorth`;
 CREATE TABLE `ks_gonorth` (
   `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '流水號',
-  `gonorth_id` varchar(20) NOT NULL COMMENT '南下單編號',
-  `gonorth_date` datetime NOT NULL COMMENT '日期(南下單)',
+  `gonorth_id` varchar(20) NOT NULL COMMENT '北上單編號',
+  `gonorth_date` datetime NOT NULL COMMENT '日期(北上單)',
   `gonorth_driver` varchar(5) NOT NULL COMMENT '司機名稱',
   `gonorth_license_plate_number` varchar(10) NOT NULL COMMENT '車牌號碼',
   `gonorth_company` varchar(20) NOT NULL DEFAULT '無' COMMENT '公司名稱',
@@ -296,12 +299,15 @@ CREATE TABLE `ks_gonorth` (
   `gonorth_driver_pay` double(10,2) NOT NULL DEFAULT '0.00' COMMENT '此趟薪資',
   PRIMARY KEY (`id`),
   UNIQUE KEY `downbound_id` (`gonorth_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ks_gonorth
 -- ----------------------------
-INSERT INTO `ks_gonorth` VALUES ('1', '20202020', '2022-02-11 00:00:00', '黃振凱', 'AKA-878', 'ZZ', 'GG', 'XX', '無', 'EE', '36.50', '850.00', null, '31025.00', '0.00', '7135.75');
+INSERT INTO `ks_gonorth` VALUES ('1', '22021801', '2022-02-18 00:00:00', '黃智凱', 'KSC-0803', '台積電', '彰化', '新竹', '無', '石膏', '30.00', '700.00', '665.00', '21000.00', '25650.00', '4830.00');
+INSERT INTO `ks_gonorth` VALUES ('2', '22021802', '2022-02-18 00:00:00', '李政儒', 'KSC-0805', '台積電', '彰化', '新竹', '無', '石膏', '28.00', '720.00', '684.00', '20160.00', '19152.00', '4636.80');
+INSERT INTO `ks_gonorth` VALUES ('3', '22021901', '2022-02-19 00:00:00', '黃智凱', 'KSC-0803', '聯發科', '彰化', '新竹', '無', '土', '35.50', '850.00', '807.50', '30175.00', '28666.25', '6940.25');
+INSERT INTO `ks_gonorth` VALUES ('4', '22021902', '2022-02-19 00:00:00', '李政儒', 'KSC-0805', '聯發科', '彰化', '新竹', '無', '土', '34.00', '820.00', '779.00', '27880.00', '26486.00', '6412.40');
 
 -- ----------------------------
 -- Table structure for ks_goods
@@ -347,11 +353,14 @@ CREATE TABLE `ks_oil_order` (
   `gas_station` varchar(20) DEFAULT '其他' COMMENT '加油站名稱',
   PRIMARY KEY (`id`),
   UNIQUE KEY `oil_order_id` (`oil_order_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ks_oil_order
 -- ----------------------------
+INSERT INTO `ks_oil_order` VALUES ('3', '22021801', '2022-02-18 00:00:00', '黃智凱', 'KSC-0803', '超級柴油', '25.00', '100.00', '2500.00', '台灣石油');
+INSERT INTO `ks_oil_order` VALUES ('4', '22021802', '2022-02-18 00:00:00', '李政儒', 'KSC-0805', '超級柴油', '25.00', '120.00', '3000.00', '台灣石油');
+INSERT INTO `ks_oil_order` VALUES ('5', '22021901', '2022-02-19 00:00:00', '黃智凱', 'KSC-0803', '超級柴油', '25.00', '110.00', '2750.00', '台塑石油');
 
 -- ----------------------------
 -- Table structure for qrtz_blob_triggers
@@ -501,7 +510,7 @@ CREATE TABLE `qrtz_scheduler_state` (
 -- ----------------------------
 -- Records of qrtz_scheduler_state
 -- ----------------------------
-INSERT INTO `qrtz_scheduler_state` VALUES ('RuoyiScheduler', 'work1645211421284', '1645212848379', '15000');
+INSERT INTO `qrtz_scheduler_state` VALUES ('RuoyiScheduler', 'work1645260410001', '1645260471990', '15000');
 
 -- ----------------------------
 -- Table structure for qrtz_simple_triggers
@@ -578,9 +587,9 @@ CREATE TABLE `qrtz_triggers` (
 -- ----------------------------
 -- Records of qrtz_triggers
 -- ----------------------------
-INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME1', 'DEFAULT', 'TASK_CLASS_NAME1', 'DEFAULT', null, '1645211430000', '-1', '5', 'PAUSED', 'CRON', '1645211421000', '0', null, '2', '');
-INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME2', 'DEFAULT', 'TASK_CLASS_NAME2', 'DEFAULT', null, '1645211430000', '-1', '5', 'PAUSED', 'CRON', '1645211421000', '0', null, '2', '');
-INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME3', 'DEFAULT', 'TASK_CLASS_NAME3', 'DEFAULT', null, '1645211440000', '-1', '5', 'PAUSED', 'CRON', '1645211421000', '0', null, '2', '');
+INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME1', 'DEFAULT', 'TASK_CLASS_NAME1', 'DEFAULT', null, '1645260410000', '-1', '5', 'PAUSED', 'CRON', '1645260410000', '0', null, '2', '');
+INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME2', 'DEFAULT', 'TASK_CLASS_NAME2', 'DEFAULT', null, '1645260420000', '-1', '5', 'PAUSED', 'CRON', '1645260410000', '0', null, '2', '');
+INSERT INTO `qrtz_triggers` VALUES ('RuoyiScheduler', 'TASK_CLASS_NAME3', 'DEFAULT', 'TASK_CLASS_NAME3', 'DEFAULT', null, '1645260420000', '-1', '5', 'PAUSED', 'CRON', '1645260410000', '0', null, '2', '');
 
 -- ----------------------------
 -- Table structure for sys_config
@@ -807,7 +816,7 @@ CREATE TABLE `sys_logininfor` (
   `msg` varchar(255) DEFAULT '' COMMENT '提示消息',
   `login_time` datetime DEFAULT NULL COMMENT '访问时间',
   PRIMARY KEY (`info_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=211 DEFAULT CHARSET=utf8 COMMENT='系统访问记录';
+) ENGINE=InnoDB AUTO_INCREMENT=223 DEFAULT CHARSET=utf8 COMMENT='系统访问记录';
 
 -- ----------------------------
 -- Records of sys_logininfor
@@ -923,6 +932,18 @@ INSERT INTO `sys_logininfor` VALUES ('207', 'admin', '127.0.0.1', '内网IP', 'C
 INSERT INTO `sys_logininfor` VALUES ('208', 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '1', '验证码错误', '2022-02-19 03:07:58');
 INSERT INTO `sys_logininfor` VALUES ('209', 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2022-02-19 03:08:02');
 INSERT INTO `sys_logininfor` VALUES ('210', 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2022-02-19 03:10:31');
+INSERT INTO `sys_logininfor` VALUES ('211', 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2022-02-19 03:45:49');
+INSERT INTO `sys_logininfor` VALUES ('212', 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2022-02-19 04:09:58');
+INSERT INTO `sys_logininfor` VALUES ('213', 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2022-02-19 04:11:17');
+INSERT INTO `sys_logininfor` VALUES ('214', 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2022-02-19 04:15:35');
+INSERT INTO `sys_logininfor` VALUES ('215', 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2022-02-19 04:16:35');
+INSERT INTO `sys_logininfor` VALUES ('216', 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2022-02-19 04:17:01');
+INSERT INTO `sys_logininfor` VALUES ('217', 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2022-02-19 04:17:54');
+INSERT INTO `sys_logininfor` VALUES ('218', 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2022-02-19 04:24:22');
+INSERT INTO `sys_logininfor` VALUES ('219', 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2022-02-19 05:18:21');
+INSERT INTO `sys_logininfor` VALUES ('220', 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2022-02-19 16:22:55');
+INSERT INTO `sys_logininfor` VALUES ('221', 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2022-02-19 16:46:04');
+INSERT INTO `sys_logininfor` VALUES ('222', 'admin', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', '0', '登录成功', '2022-02-19 16:46:54');
 
 -- ----------------------------
 -- Table structure for sys_menu
@@ -946,7 +967,7 @@ CREATE TABLE `sys_menu` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(500) DEFAULT '' COMMENT '备注',
   PRIMARY KEY (`menu_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2099 DEFAULT CHARSET=utf8 COMMENT='菜单权限表';
+) ENGINE=InnoDB AUTO_INCREMENT=2100 DEFAULT CHARSET=utf8 COMMENT='菜单权限表';
 
 -- ----------------------------
 -- Records of sys_menu
@@ -1037,42 +1058,43 @@ INSERT INTO `sys_menu` VALUES ('1059', '生成删除', '115', '3', '#', '', 'F',
 INSERT INTO `sys_menu` VALUES ('1060', '预览代码', '115', '4', '#', '', 'F', '0', '1', 'tool:gen:preview', '#', 'admin', '2022-02-08 12:56:01', '', null, '');
 INSERT INTO `sys_menu` VALUES ('1061', '生成代码', '115', '5', '#', '', 'F', '0', '1', 'tool:gen:code', '#', 'admin', '2022-02-08 12:56:01', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2006', '凱基系統', '0', '0', '#', 'menuItem', 'M', '0', '1', '', 'fa fa-automobile', 'admin', '2022-02-08 22:25:50', 'admin', '2022-02-19 03:24:25', '');
-INSERT INTO `sys_menu` VALUES ('2063', '南下表單', '2006', '1', '/ks/downbound', '', 'C', '0', '1', 'ks:downbound:view', '#', 'admin', '2022-02-19 02:53:38', '', null, '南下表單菜单');
+INSERT INTO `sys_menu` VALUES ('2063', '南下表單', '2006', '1', '/ks/downbound', 'menuItem', 'C', '0', '1', 'ks:downbound:view', '#', 'admin', '2022-02-19 02:53:38', 'admin', '2022-02-19 16:43:18', '南下表單菜单');
 INSERT INTO `sys_menu` VALUES ('2064', '南下表單查询', '2063', '1', '#', '', 'F', '0', '1', 'ks:downbound:list', '#', 'admin', '2022-02-19 02:53:38', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2065', '南下表單新增', '2063', '2', '#', '', 'F', '0', '1', 'ks:downbound:add', '#', 'admin', '2022-02-19 02:53:38', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2066', '南下表單修改', '2063', '3', '#', '', 'F', '0', '1', 'ks:downbound:edit', '#', 'admin', '2022-02-19 02:53:38', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2067', '南下表單删除', '2063', '4', '#', '', 'F', '0', '1', 'ks:downbound:remove', '#', 'admin', '2022-02-19 02:53:38', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2068', '南下表單导出', '2063', '5', '#', '', 'F', '0', '1', 'ks:downbound:export', '#', 'admin', '2022-02-19 02:53:38', '', null, '');
-INSERT INTO `sys_menu` VALUES ('2069', '員工表單', '2006', '1', '/ks/employee', '', 'C', '0', '1', 'ks:employee:view', '#', 'admin', '2022-02-19 02:59:35', '', null, '員工表單菜单');
+INSERT INTO `sys_menu` VALUES ('2069', '員工表單', '2006', '101', '/ks/employee', 'menuItem', 'C', '0', '1', 'ks:employee:view', '#', 'admin', '2022-02-19 02:59:35', 'admin', '2022-02-19 16:43:44', '員工表單菜单');
 INSERT INTO `sys_menu` VALUES ('2070', '員工表單查询', '2069', '1', '#', '', 'F', '0', '1', 'ks:employee:list', '#', 'admin', '2022-02-19 02:59:35', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2071', '員工表單新增', '2069', '2', '#', '', 'F', '0', '1', 'ks:employee:add', '#', 'admin', '2022-02-19 02:59:35', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2072', '員工表單修改', '2069', '3', '#', '', 'F', '0', '1', 'ks:employee:edit', '#', 'admin', '2022-02-19 02:59:35', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2073', '員工表單删除', '2069', '4', '#', '', 'F', '0', '1', 'ks:employee:remove', '#', 'admin', '2022-02-19 02:59:35', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2074', '員工表單导出', '2069', '5', '#', '', 'F', '0', '1', 'ks:employee:export', '#', 'admin', '2022-02-19 02:59:35', '', null, '');
-INSERT INTO `sys_menu` VALUES ('2075', '北上表單', '2006', '1', '/ks/gonorth', '', 'C', '0', '1', 'ks:gonorth:view', '#', 'admin', '2022-02-19 03:03:05', '', null, '北上表單菜单');
+INSERT INTO `sys_menu` VALUES ('2075', '北上表單', '2006', '2', '/ks/gonorth', 'menuItem', 'C', '0', '1', 'ks:gonorth:view', '#', 'admin', '2022-02-19 03:03:05', 'admin', '2022-02-19 16:43:24', '北上表單菜单');
 INSERT INTO `sys_menu` VALUES ('2076', '北上表單查询', '2075', '1', '#', '', 'F', '0', '1', 'ks:gonorth:list', '#', 'admin', '2022-02-19 03:03:05', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2077', '北上表單新增', '2075', '2', '#', '', 'F', '0', '1', 'ks:gonorth:add', '#', 'admin', '2022-02-19 03:03:05', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2078', '北上表單修改', '2075', '3', '#', '', 'F', '0', '1', 'ks:gonorth:edit', '#', 'admin', '2022-02-19 03:03:05', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2079', '北上表單删除', '2075', '4', '#', '', 'F', '0', '1', 'ks:gonorth:remove', '#', 'admin', '2022-02-19 03:03:05', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2080', '北上表單导出', '2075', '5', '#', '', 'F', '0', '1', 'ks:gonorth:export', '#', 'admin', '2022-02-19 03:03:05', '', null, '');
-INSERT INTO `sys_menu` VALUES ('2081', '加油單表單', '2006', '1', '/ks/oil', '', 'C', '0', '1', 'ks:oil:view', '#', 'admin', '2022-02-19 03:05:25', '', null, '加油單表單菜单');
+INSERT INTO `sys_menu` VALUES ('2081', '加油單表單', '2006', '3', '/ks/oil', 'menuItem', 'C', '0', '1', 'ks:oil:view', '#', 'admin', '2022-02-19 03:05:25', 'admin', '2022-02-19 16:43:33', '加油單表單菜单');
 INSERT INTO `sys_menu` VALUES ('2082', '加油單表單查询', '2081', '1', '#', '', 'F', '0', '1', 'ks:oil:list', '#', 'admin', '2022-02-19 03:05:25', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2083', '加油單表單新增', '2081', '2', '#', '', 'F', '0', '1', 'ks:oil:add', '#', 'admin', '2022-02-19 03:05:25', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2084', '加油單表單修改', '2081', '3', '#', '', 'F', '0', '1', 'ks:oil:edit', '#', 'admin', '2022-02-19 03:05:25', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2085', '加油單表單删除', '2081', '4', '#', '', 'F', '0', '1', 'ks:oil:remove', '#', 'admin', '2022-02-19 03:05:25', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2086', '加油單表單导出', '2081', '5', '#', '', 'F', '0', '1', 'ks:oil:export', '#', 'admin', '2022-02-19 03:05:25', '', null, '');
-INSERT INTO `sys_menu` VALUES ('2087', '運送貨物表單', '2006', '1', '/ks/goods', '', 'C', '0', '1', 'ks:goods:view', '#', 'admin', '2022-02-19 03:07:25', '', null, '運送貨物表單菜单');
+INSERT INTO `sys_menu` VALUES ('2087', '運送貨物表單', '2006', '103', '/ks/goods', 'menuItem', 'C', '0', '1', 'ks:goods:view', '#', 'admin', '2022-02-19 03:07:25', 'admin', '2022-02-19 16:44:12', '運送貨物表單菜单');
 INSERT INTO `sys_menu` VALUES ('2088', '運送貨物表單查询', '2087', '1', '#', '', 'F', '0', '1', 'ks:goods:list', '#', 'admin', '2022-02-19 03:07:25', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2089', '運送貨物表單新增', '2087', '2', '#', '', 'F', '0', '1', 'ks:goods:add', '#', 'admin', '2022-02-19 03:07:25', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2090', '運送貨物表單修改', '2087', '3', '#', '', 'F', '0', '1', 'ks:goods:edit', '#', 'admin', '2022-02-19 03:07:25', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2091', '運送貨物表單删除', '2087', '4', '#', '', 'F', '0', '1', 'ks:goods:remove', '#', 'admin', '2022-02-19 03:07:25', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2092', '運送貨物表單导出', '2087', '5', '#', '', 'F', '0', '1', 'ks:goods:export', '#', 'admin', '2022-02-19 03:07:25', '', null, '');
-INSERT INTO `sys_menu` VALUES ('2093', '車輛表單', '2006', '1', '/ks/car', '', 'C', '0', '1', 'ks:car:view', '#', 'admin', '2022-02-19 03:08:34', '', null, '車輛表單菜单');
+INSERT INTO `sys_menu` VALUES ('2093', '車輛表單', '2006', '102', '/ks/car', 'menuItem', 'C', '0', '1', 'ks:car:view', '#', 'admin', '2022-02-19 03:08:34', 'admin', '2022-02-19 16:43:57', '車輛表單菜单');
 INSERT INTO `sys_menu` VALUES ('2094', '車輛表單查询', '2093', '1', '#', '', 'F', '0', '1', 'ks:car:list', '#', 'admin', '2022-02-19 03:08:34', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2095', '車輛表單新增', '2093', '2', '#', '', 'F', '0', '1', 'ks:car:add', '#', 'admin', '2022-02-19 03:08:34', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2096', '車輛表單修改', '2093', '3', '#', '', 'F', '0', '1', 'ks:car:edit', '#', 'admin', '2022-02-19 03:08:34', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2097', '車輛表單删除', '2093', '4', '#', '', 'F', '0', '1', 'ks:car:remove', '#', 'admin', '2022-02-19 03:08:34', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2098', '車輛表單导出', '2093', '5', '#', '', 'F', '0', '1', 'ks:car:export', '#', 'admin', '2022-02-19 03:08:34', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2099', '資料顯示', '2006', '0', '/ks/showdata', 'menuItem', 'C', '0', '1', '#', 'fa fa-bar-chart-o', 'admin', '2022-02-19 04:02:10', 'admin', '2022-02-19 16:44:25', '');
 
 -- ----------------------------
 -- Table structure for sys_notice
@@ -1120,7 +1142,7 @@ CREATE TABLE `sys_oper_log` (
   `error_msg` varchar(2000) DEFAULT '' COMMENT '错误消息',
   `oper_time` datetime DEFAULT NULL COMMENT '操作时间',
   PRIMARY KEY (`oper_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=255 DEFAULT CHARSET=utf8 COMMENT='操作日志记录';
+) ENGINE=InnoDB AUTO_INCREMENT=280 DEFAULT CHARSET=utf8 COMMENT='操作日志记录';
 
 -- ----------------------------
 -- Records of sys_oper_log
@@ -1280,6 +1302,31 @@ INSERT INTO `sys_oper_log` VALUES ('251', '代码生成', '2', 'com.ruoyi.genera
 INSERT INTO `sys_oper_log` VALUES ('252', '代码生成', '8', 'com.ruoyi.generator.controller.GenController.download()', 'GET', '1', 'admin', '研发部门', '/tool/gen/download/ks_car', '127.0.0.1', '内网IP', '\"ks_car\"', null, '0', null, '2022-02-19 03:08:20');
 INSERT INTO `sys_oper_log` VALUES ('253', '菜单管理', '2', 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', '1', 'admin', '研发部门', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"2006\"],\"parentId\":[\"0\"],\"menuType\":[\"M\"],\"menuName\":[\"凱基系統\"],\"url\":[\"#\"],\"target\":[\"menuItem\"],\"perms\":[\"\"],\"orderNum\":[\"0\"],\"icon\":[\"fa fa-automobile\"],\"visible\":[\"0\"],\"isRefresh\":[\"1\"]}', '{\"msg\":\"操作成功\",\"code\":0}', '0', null, '2022-02-19 03:24:25');
 INSERT INTO `sys_oper_log` VALUES ('254', '員工表單', '2', 'com.ruoyi.kaisheng.controller.KsEmployeeController.editSave()', 'POST', '1', 'admin', '研发部门', '/ks/employee/edit', '127.0.0.1', '内网IP', '{\"id\":[\"1\"],\"employeeId\":[\"ks-01\"],\"name\":[\"黃智凱\"],\"aka\":[\"\"],\"phoneNumber\":[\"0960-182124\"],\"idCard\":[\"A100537101\"],\"homeTelephoneNumber\":[\"\"],\"address\":[\"新北市泰山區中華街9號\"],\"company\":[\"凱基股份有限公司\"],\"staffPositions\":[\"負責人\"],\"entryDate\":[\"2015-05-01\"],\"resignationDate\":[\"\"],\"reasonForLeaving\":[\"無\"]}', '{\"msg\":\"操作成功\",\"code\":0}', '0', null, '2022-02-19 03:25:13');
+INSERT INTO `sys_oper_log` VALUES ('255', '菜单管理', '1', 'com.ruoyi.web.controller.system.SysMenuController.addSave()', 'POST', '1', 'admin', '研发部门', '/system/menu/add', '127.0.0.1', '内网IP', '{\"parentId\":[\"2006\"],\"menuType\":[\"C\"],\"menuName\":[\"資料顯示\"],\"url\":[\"\"],\"target\":[\"menuItem\"],\"perms\":[\"\"],\"orderNum\":[\"100\"],\"icon\":[\"fa fa-bar-chart-o\"],\"visible\":[\"0\"],\"isRefresh\":[\"1\"]}', '{\"msg\":\"操作成功\",\"code\":0}', '0', null, '2022-02-19 04:02:10');
+INSERT INTO `sys_oper_log` VALUES ('256', '菜单管理', '2', 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', '1', 'admin', '研发部门', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"2099\"],\"parentId\":[\"2006\"],\"menuType\":[\"C\"],\"menuName\":[\"資料顯示\"],\"url\":[\"ks/showdate\"],\"target\":[\"menuItem\"],\"perms\":[\"\"],\"orderNum\":[\"100\"],\"icon\":[\"fa fa-bar-chart-o\"],\"visible\":[\"0\"],\"isRefresh\":[\"1\"]}', '{\"msg\":\"操作成功\",\"code\":0}', '0', null, '2022-02-19 04:02:45');
+INSERT INTO `sys_oper_log` VALUES ('257', '菜单管理', '2', 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', '1', 'admin', '研发部门', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"2099\"],\"parentId\":[\"2006\"],\"menuType\":[\"C\"],\"menuName\":[\"資料顯示\"],\"url\":[\"/ks/showdate\"],\"target\":[\"menuItem\"],\"perms\":[\"\"],\"orderNum\":[\"100\"],\"icon\":[\"fa fa-bar-chart-o\"],\"visible\":[\"0\"],\"isRefresh\":[\"1\"]}', '{\"msg\":\"操作成功\",\"code\":0}', '0', null, '2022-02-19 04:02:55');
+INSERT INTO `sys_oper_log` VALUES ('258', '菜单管理', '2', 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', '1', 'admin', '研发部门', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"2099\"],\"parentId\":[\"2006\"],\"menuType\":[\"C\"],\"menuName\":[\"資料顯示\"],\"url\":[\"/ks/showdate\"],\"target\":[\"menuItem\"],\"perms\":[\"ks:showdata:view\"],\"orderNum\":[\"100\"],\"icon\":[\"fa fa-bar-chart-o\"],\"visible\":[\"0\"],\"isRefresh\":[\"1\"]}', '{\"msg\":\"操作成功\",\"code\":0}', '0', null, '2022-02-19 04:03:19');
+INSERT INTO `sys_oper_log` VALUES ('259', '菜单管理', '2', 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', '1', 'admin', '研发部门', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"2099\"],\"parentId\":[\"2006\"],\"menuType\":[\"C\"],\"menuName\":[\"資料顯示\"],\"url\":[\"/ks/showdata\"],\"target\":[\"menuItem\"],\"perms\":[\"#\"],\"orderNum\":[\"100\"],\"icon\":[\"fa fa-bar-chart-o\"],\"visible\":[\"0\"],\"isRefresh\":[\"1\"]}', '{\"msg\":\"操作成功\",\"code\":0}', '0', null, '2022-02-19 04:03:58');
+INSERT INTO `sys_oper_log` VALUES ('260', '南下表單', '2', 'com.ruoyi.kaisheng.controller.KsDownboundController.editSave()', 'POST', '1', 'admin', '研发部门', '/ks/downbound/edit', '127.0.0.1', '内网IP', '{\"id\":[\"1\"],\"downboundId\":[\"22021901\"],\"downboundDate\":[\"2022-02-11\"],\"downboundDriver\":[\"黃智凱\"],\"downboundLicensePlateNumber\":[\"KSC-0803\"],\"downboundCompany\":[\"鴻海\"],\"downboundOutset\":[\"台北\"],\"downboundYard\":[\"彰化\"],\"downboundCash\":[\"無\"],\"downboundGoods\":[\"土\"],\"downboundGoodsMt\":[\"36.5\"],\"downboundGoodsPrice\":[\"850.0\"],\"downboundTotal\":[\"31025.0\"],\"downboundDriverPay\":[\"7135.75\"]}', '{\"msg\":\"操作成功\",\"code\":0}', '0', null, '2022-02-19 16:25:07');
+INSERT INTO `sys_oper_log` VALUES ('261', '代码生成', '2', 'com.ruoyi.generator.controller.GenController.editSave()', 'POST', '1', 'admin', '研发部门', '/tool/gen/edit', '127.0.0.1', '内网IP', '{\"tableId\":[\"7\"],\"tableName\":[\"ks_gonorth\"],\"tableComment\":[\"北上單資訊\"],\"className\":[\"KsGonorth\"],\"functionAuthor\":[\"Sheng\"],\"remark\":[\"\"],\"columns[0].columnId\":[\"64\"],\"columns[0].sort\":[\"1\"],\"columns[0].columnComment\":[\"流水號\"],\"columns[0].javaType\":[\"Integer\"],\"columns[0].javaField\":[\"id\"],\"columns[0].isInsert\":[\"1\"],\"columns[0].queryType\":[\"EQ\"],\"columns[0].htmlType\":[\"input\"],\"columns[0].dictType\":[\"\"],\"columns[1].columnId\":[\"65\"],\"columns[1].sort\":[\"2\"],\"columns[1].columnComment\":[\"北下單編號\"],\"columns[1].javaType\":[\"String\"],\"columns[1].javaField\":[\"gonorthId\"],\"columns[1].isInsert\":[\"1\"],\"columns[1].isEdit\":[\"1\"],\"columns[1].isList\":[\"1\"],\"columns[1].isQuery\":[\"1\"],\"columns[1].queryType\":[\"EQ\"],\"columns[1].isRequired\":[\"1\"],\"columns[1].htmlType\":[\"input\"],\"columns[1].dictType\":[\"\"],\"columns[2].columnId\":[\"66\"],\"columns[2].sort\":[\"3\"],\"columns[2].columnComment\":[\"日期(北下單)\"],\"columns[2].javaType\":[\"Date\"],\"columns[2].javaField\":[\"gonorthDate\"],\"columns[2].isInsert\":[\"1\"],\"columns[2].isEdit\":[\"1\"],\"columns[2].isList\":[\"1\"],\"columns[2].isQuery\":[\"1\"],\"columns[2].queryType\":[\"EQ\"],\"columns[2].isRequired\":[\"1\"],\"columns[2].htmlType\":[\"datetime\"],\"columns[2].dictType\":[\"\"],\"columns[3].columnId\":[\"67\"],\"columns[3].sort\":[\"4\"],\"columns[3].columnComment\":[\"司機名稱\"],\"columns[3].javaType\":[\"String\"],\"columns[3].javaField\":[\"gonorthDriver\"],\"columns[3].isInsert\":[\"1\"],\"columns[3].isEdit\":[\"1\"],\"columns[3].isList\":[\"1\"],\"columns[3].isQuery\":[\"1\"],\"columns[3].queryType\":[\"LIKE\"],\"columns[3].isRequired\":[\"1\"],\"columns[3].htmlType\":[\"input\"],\"columns[3].dictType\":[\"\"],\"columns[4].columnId\":[\"68\"],\"columns[4].sort\":[\"5\"],\"columns[4].columnComment\":[\"車牌號碼\"],\"columns[4].javaType\":[\"String\"],\"columns[4].javaField\":[\"gonorthLicensePlateNumber\"],\"columns[4].isInsert\":[\"1\"],\"columns[4].isEdit\":[\"1\"],\"columns[4].isList\":[\"1\"],\"columns[4].isQuery\":[\"1\"],\"columns[4].queryType\":[\"LIKE\"],\"columns[4].isRequired\":[\"1\"],\"columns[4].htmlType\":[\"input\"],\"columns[4].dictType\":[\"\"],\"columns[5].columnId\":[\"', '{\"msg\":\"操作成功\",\"code\":0}', '0', null, '2022-02-19 16:30:03');
+INSERT INTO `sys_oper_log` VALUES ('262', '代码生成', '2', 'com.ruoyi.generator.controller.GenController.editSave()', 'POST', '1', 'admin', '研发部门', '/tool/gen/edit', '127.0.0.1', '内网IP', '{\"tableId\":[\"7\"],\"tableName\":[\"ks_gonorth\"],\"tableComment\":[\"北上單資訊\"],\"className\":[\"KsGonorth\"],\"functionAuthor\":[\"Sheng\"],\"remark\":[\"\"],\"columns[0].columnId\":[\"64\"],\"columns[0].sort\":[\"1\"],\"columns[0].columnComment\":[\"流水號\"],\"columns[0].javaType\":[\"Integer\"],\"columns[0].javaField\":[\"id\"],\"columns[0].isInsert\":[\"1\"],\"columns[0].queryType\":[\"EQ\"],\"columns[0].htmlType\":[\"input\"],\"columns[0].dictType\":[\"\"],\"columns[1].columnId\":[\"65\"],\"columns[1].sort\":[\"2\"],\"columns[1].columnComment\":[\"北下單編號\"],\"columns[1].javaType\":[\"String\"],\"columns[1].javaField\":[\"gonorthId\"],\"columns[1].isInsert\":[\"1\"],\"columns[1].isEdit\":[\"1\"],\"columns[1].isList\":[\"1\"],\"columns[1].isQuery\":[\"1\"],\"columns[1].queryType\":[\"EQ\"],\"columns[1].isRequired\":[\"1\"],\"columns[1].htmlType\":[\"input\"],\"columns[1].dictType\":[\"\"],\"columns[2].columnId\":[\"66\"],\"columns[2].sort\":[\"3\"],\"columns[2].columnComment\":[\"日期(北下單)\"],\"columns[2].javaType\":[\"Date\"],\"columns[2].javaField\":[\"gonorthDate\"],\"columns[2].isInsert\":[\"1\"],\"columns[2].isEdit\":[\"1\"],\"columns[2].isList\":[\"1\"],\"columns[2].isQuery\":[\"1\"],\"columns[2].queryType\":[\"EQ\"],\"columns[2].isRequired\":[\"1\"],\"columns[2].htmlType\":[\"datetime\"],\"columns[2].dictType\":[\"\"],\"columns[3].columnId\":[\"67\"],\"columns[3].sort\":[\"4\"],\"columns[3].columnComment\":[\"司機名稱\"],\"columns[3].javaType\":[\"String\"],\"columns[3].javaField\":[\"gonorthDriver\"],\"columns[3].isInsert\":[\"1\"],\"columns[3].isEdit\":[\"1\"],\"columns[3].isList\":[\"1\"],\"columns[3].isQuery\":[\"1\"],\"columns[3].queryType\":[\"LIKE\"],\"columns[3].isRequired\":[\"1\"],\"columns[3].htmlType\":[\"input\"],\"columns[3].dictType\":[\"\"],\"columns[4].columnId\":[\"68\"],\"columns[4].sort\":[\"5\"],\"columns[4].columnComment\":[\"車牌號碼\"],\"columns[4].javaType\":[\"String\"],\"columns[4].javaField\":[\"gonorthLicensePlateNumber\"],\"columns[4].isInsert\":[\"1\"],\"columns[4].isEdit\":[\"1\"],\"columns[4].isList\":[\"1\"],\"columns[4].isQuery\":[\"1\"],\"columns[4].queryType\":[\"LIKE\"],\"columns[4].isRequired\":[\"1\"],\"columns[4].htmlType\":[\"input\"],\"columns[4].dictType\":[\"\"],\"columns[5].columnId\":[\"', '{\"msg\":\"操作成功\",\"code\":0}', '0', null, '2022-02-19 16:30:52');
+INSERT INTO `sys_oper_log` VALUES ('263', '加油單表單', '1', 'com.ruoyi.kaisheng.controller.KsOilOrderController.addSave()', 'POST', '1', 'admin', '研发部门', '/ks/oil/add', '127.0.0.1', '内网IP', '{\"oilOrderId\":[\"22021801\"],\"oidDate\":[\"2022-02-18\"],\"oilDriver\":[\"黃智凱\"],\"oilLicensePlateNumber\":[\"KSC-0803\"],\"oilType\":[\"超級柴油\"],\"oilPrice\":[\"25\"],\"oilLiters\":[\"100\"],\"oilTotal\":[\"2500\"],\"gasStation\":[\"台灣石油\"]}', '{\"msg\":\"操作成功\",\"code\":0}', '0', null, '2022-02-19 16:36:07');
+INSERT INTO `sys_oper_log` VALUES ('264', '加油單表單', '1', 'com.ruoyi.kaisheng.controller.KsOilOrderController.addSave()', 'POST', '1', 'admin', '研发部门', '/ks/oil/add', '127.0.0.1', '内网IP', '{\"oilOrderId\":[\"22021802\"],\"oidDate\":[\"2022-02-18\"],\"oilDriver\":[\"李政儒\"],\"oilLicensePlateNumber\":[\"KSC-0805\"],\"oilType\":[\"超級柴油\"],\"oilPrice\":[\"25\"],\"oilLiters\":[\"120\"],\"oilTotal\":[\"3000\"],\"gasStation\":[\"台灣石油\"]}', '{\"msg\":\"操作成功\",\"code\":0}', '0', null, '2022-02-19 16:36:50');
+INSERT INTO `sys_oper_log` VALUES ('265', '加油單表單', '1', 'com.ruoyi.kaisheng.controller.KsOilOrderController.addSave()', 'POST', '1', 'admin', '研发部门', '/ks/oil/add', '127.0.0.1', '内网IP', '{\"oilOrderId\":[\"22021901\"],\"oidDate\":[\"2022-02-19\"],\"oilDriver\":[\"黃智凱\"],\"oilLicensePlateNumber\":[\"KSC-0803\"],\"oilType\":[\"超級柴油\"],\"oilPrice\":[\"25\"],\"oilLiters\":[\"110\"],\"oilTotal\":[\"2750\"],\"gasStation\":[\"台塑石油\"]}', '{\"msg\":\"操作成功\",\"code\":0}', '0', null, '2022-02-19 16:37:37');
+INSERT INTO `sys_oper_log` VALUES ('266', '北上表單', '2', 'com.ruoyi.kaisheng.controller.KsGonorthController.editSave()', 'POST', '1', 'admin', '研发部门', '/ks/gonorth/edit', '127.0.0.1', '内网IP', '{\"id\":[\"1\"],\"gonorthId\":[\"22021801\"],\"gonorthDate\":[\"2022-02-18\"],\"gonorthDriver\":[\"黃智凱\"],\"gonorthLicensePlateNumber\":[\"KSC-0803\"],\"gonorthCompany\":[\"台積電\"],\"gonorthOutset\":[\"彰化\"],\"gonorthYard\":[\"新竹\"],\"gonorthCash\":[\"無\"],\"gonorthGoods\":[\"石膏\"],\"gonorthGoodsMt\":[\"30.0\"],\"gonorthGoodsPriceCompany\":[\"700.0\"],\"gonorthGoodsPriceDriver\":[\"665\"],\"gonorthTotal\":[\"21000.0\"],\"gonorthBillTotal\":[\"25650\"],\"gonorthDriverPay\":[\"4830.0\"]}', '{\"msg\":\"操作成功\",\"code\":0}', '0', null, '2022-02-19 16:41:18');
+INSERT INTO `sys_oper_log` VALUES ('267', '北上表單', '2', 'com.ruoyi.kaisheng.controller.KsGonorthController.editSave()', 'POST', '1', 'admin', '研发部门', '/ks/gonorth/edit', '127.0.0.1', '内网IP', '{\"id\":[\"2\"],\"gonorthId\":[\"22021802\"],\"gonorthDate\":[\"2022-02-18\"],\"gonorthDriver\":[\"李政儒\"],\"gonorthLicensePlateNumber\":[\"KSC-0805\"],\"gonorthCompany\":[\"台積電\"],\"gonorthOutset\":[\"彰化\"],\"gonorthYard\":[\"新竹\"],\"gonorthCash\":[\"無\"],\"gonorthGoods\":[\"石膏\"],\"gonorthGoodsMt\":[\"28.0\"],\"gonorthGoodsPriceCompany\":[\"720.0\"],\"gonorthGoodsPriceDriver\":[\"684\"],\"gonorthTotal\":[\"20160.0\"],\"gonorthBillTotal\":[\"19152\"],\"gonorthDriverPay\":[\"4636.8\"]}', '{\"msg\":\"操作成功\",\"code\":0}', '0', null, '2022-02-19 16:41:44');
+INSERT INTO `sys_oper_log` VALUES ('268', '北上表單', '2', 'com.ruoyi.kaisheng.controller.KsGonorthController.editSave()', 'POST', '1', 'admin', '研发部门', '/ks/gonorth/edit', '127.0.0.1', '内网IP', '{\"id\":[\"3\"],\"gonorthId\":[\"22021901\"],\"gonorthDate\":[\"2022-02-19\"],\"gonorthDriver\":[\"黃智凱\"],\"gonorthLicensePlateNumber\":[\"KSC-0803\"],\"gonorthCompany\":[\"聯發科\"],\"gonorthOutset\":[\"彰化\"],\"gonorthYard\":[\"新竹\"],\"gonorthCash\":[\"無\"],\"gonorthGoods\":[\"土\"],\"gonorthGoodsMt\":[\"35.5\"],\"gonorthGoodsPriceCompany\":[\"850.0\"],\"gonorthGoodsPriceDriver\":[\"807.5\"],\"gonorthTotal\":[\"30175.0\"],\"gonorthBillTotal\":[\"28666.25\"],\"gonorthDriverPay\":[\"6940.25\"]}', '{\"msg\":\"操作成功\",\"code\":0}', '0', null, '2022-02-19 16:42:04');
+INSERT INTO `sys_oper_log` VALUES ('269', '北上表單', '2', 'com.ruoyi.kaisheng.controller.KsGonorthController.editSave()', 'POST', '1', 'admin', '研发部门', '/ks/gonorth/edit', '127.0.0.1', '内网IP', '{\"id\":[\"4\"],\"gonorthId\":[\"22021902\"],\"gonorthDate\":[\"2022-02-19\"],\"gonorthDriver\":[\"李政儒\"],\"gonorthLicensePlateNumber\":[\"KSC-0805\"],\"gonorthCompany\":[\"聯發科\"],\"gonorthOutset\":[\"彰化\"],\"gonorthYard\":[\"新竹\"],\"gonorthCash\":[\"無\"],\"gonorthGoods\":[\"土\"],\"gonorthGoodsMt\":[\"34.0\"],\"gonorthGoodsPriceCompany\":[\"820.0\"],\"gonorthGoodsPriceDriver\":[\"779\"],\"gonorthTotal\":[\"27880.0\"],\"gonorthBillTotal\":[\"26486\"],\"gonorthDriverPay\":[\"6412.4\"]}', '{\"msg\":\"操作成功\",\"code\":0}', '0', null, '2022-02-19 16:42:24');
+INSERT INTO `sys_oper_log` VALUES ('270', '菜单管理', '2', 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', '1', 'admin', '研发部门', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"2063\"],\"parentId\":[\"2006\"],\"menuType\":[\"C\"],\"menuName\":[\"南下表單\"],\"url\":[\"/ks/downbound\"],\"target\":[\"menuItem\"],\"perms\":[\"ks:downbound:view\"],\"orderNum\":[\"1\"],\"icon\":[\"#\"],\"visible\":[\"0\"],\"isRefresh\":[\"1\"]}', '{\"msg\":\"操作成功\",\"code\":0}', '0', null, '2022-02-19 16:43:18');
+INSERT INTO `sys_oper_log` VALUES ('271', '菜单管理', '2', 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', '1', 'admin', '研发部门', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"2075\"],\"parentId\":[\"2006\"],\"menuType\":[\"C\"],\"menuName\":[\"北上表單\"],\"url\":[\"/ks/gonorth\"],\"target\":[\"menuItem\"],\"perms\":[\"ks:gonorth:view\"],\"orderNum\":[\"2\"],\"icon\":[\"#\"],\"visible\":[\"0\"],\"isRefresh\":[\"1\"]}', '{\"msg\":\"操作成功\",\"code\":0}', '0', null, '2022-02-19 16:43:24');
+INSERT INTO `sys_oper_log` VALUES ('272', '菜单管理', '2', 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', '1', 'admin', '研发部门', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"2081\"],\"parentId\":[\"2006\"],\"menuType\":[\"C\"],\"menuName\":[\"加油單表單\"],\"url\":[\"/ks/oil\"],\"target\":[\"menuItem\"],\"perms\":[\"ks:oil:view\"],\"orderNum\":[\"3\"],\"icon\":[\"#\"],\"visible\":[\"0\"],\"isRefresh\":[\"1\"]}', '{\"msg\":\"操作成功\",\"code\":0}', '0', null, '2022-02-19 16:43:33');
+INSERT INTO `sys_oper_log` VALUES ('273', '菜单管理', '2', 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', '1', 'admin', '研发部门', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"2069\"],\"parentId\":[\"2006\"],\"menuType\":[\"C\"],\"menuName\":[\"員工表單\"],\"url\":[\"/ks/employee\"],\"target\":[\"menuItem\"],\"perms\":[\"ks:employee:view\"],\"orderNum\":[\"101\"],\"icon\":[\"#\"],\"visible\":[\"0\"],\"isRefresh\":[\"1\"]}', '{\"msg\":\"操作成功\",\"code\":0}', '0', null, '2022-02-19 16:43:44');
+INSERT INTO `sys_oper_log` VALUES ('274', '菜单管理', '2', 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', '1', 'admin', '研发部门', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"2093\"],\"parentId\":[\"2006\"],\"menuType\":[\"C\"],\"menuName\":[\"車輛表單\"],\"url\":[\"/ks/car\"],\"target\":[\"menuItem\"],\"perms\":[\"ks:car:view\"],\"orderNum\":[\"102\"],\"icon\":[\"#\"],\"visible\":[\"0\"],\"isRefresh\":[\"1\"]}', '{\"msg\":\"操作成功\",\"code\":0}', '0', null, '2022-02-19 16:43:57');
+INSERT INTO `sys_oper_log` VALUES ('275', '菜单管理', '2', 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', '1', 'admin', '研发部门', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"2087\"],\"parentId\":[\"2006\"],\"menuType\":[\"C\"],\"menuName\":[\"運送貨物表單\"],\"url\":[\"/ks/goods\"],\"target\":[\"menuItem\"],\"perms\":[\"ks:goods:view\"],\"orderNum\":[\"103\"],\"icon\":[\"#\"],\"visible\":[\"0\"],\"isRefresh\":[\"1\"]}', '{\"msg\":\"操作成功\",\"code\":0}', '0', null, '2022-02-19 16:44:12');
+INSERT INTO `sys_oper_log` VALUES ('276', '菜单管理', '2', 'com.ruoyi.web.controller.system.SysMenuController.editSave()', 'POST', '1', 'admin', '研发部门', '/system/menu/edit', '127.0.0.1', '内网IP', '{\"menuId\":[\"2099\"],\"parentId\":[\"2006\"],\"menuType\":[\"C\"],\"menuName\":[\"資料顯示\"],\"url\":[\"/ks/showdata\"],\"target\":[\"menuItem\"],\"perms\":[\"#\"],\"orderNum\":[\"0\"],\"icon\":[\"fa fa-bar-chart-o\"],\"visible\":[\"0\"],\"isRefresh\":[\"1\"]}', '{\"msg\":\"操作成功\",\"code\":0}', '0', null, '2022-02-19 16:44:25');
+INSERT INTO `sys_oper_log` VALUES ('277', '代码生成', '8', 'com.ruoyi.generator.controller.GenController.download()', 'GET', '1', 'admin', '研发部门', '/tool/gen/download/ks_gonorth', '127.0.0.1', '内网IP', '\"ks_gonorth\"', null, '0', null, '2022-02-19 16:45:27');
+INSERT INTO `sys_oper_log` VALUES ('278', '代码生成', '2', 'com.ruoyi.generator.controller.GenController.editSave()', 'POST', '1', 'admin', '研发部门', '/tool/gen/edit', '127.0.0.1', '内网IP', '{\"tableId\":[\"7\"],\"tableName\":[\"ks_gonorth\"],\"tableComment\":[\"北上單資訊\"],\"className\":[\"KsGonorth\"],\"functionAuthor\":[\"Sheng\"],\"remark\":[\"\"],\"columns[0].columnId\":[\"64\"],\"columns[0].sort\":[\"1\"],\"columns[0].columnComment\":[\"流水號\"],\"columns[0].javaType\":[\"Integer\"],\"columns[0].javaField\":[\"id\"],\"columns[0].isInsert\":[\"1\"],\"columns[0].queryType\":[\"EQ\"],\"columns[0].htmlType\":[\"input\"],\"columns[0].dictType\":[\"\"],\"columns[1].columnId\":[\"65\"],\"columns[1].sort\":[\"2\"],\"columns[1].columnComment\":[\"北上單編號\"],\"columns[1].javaType\":[\"String\"],\"columns[1].javaField\":[\"gonorthId\"],\"columns[1].isInsert\":[\"1\"],\"columns[1].isEdit\":[\"1\"],\"columns[1].isList\":[\"1\"],\"columns[1].isQuery\":[\"1\"],\"columns[1].queryType\":[\"EQ\"],\"columns[1].isRequired\":[\"1\"],\"columns[1].htmlType\":[\"input\"],\"columns[1].dictType\":[\"\"],\"columns[2].columnId\":[\"66\"],\"columns[2].sort\":[\"3\"],\"columns[2].columnComment\":[\"日期(北上單)\"],\"columns[2].javaType\":[\"Date\"],\"columns[2].javaField\":[\"gonorthDate\"],\"columns[2].isInsert\":[\"1\"],\"columns[2].isEdit\":[\"1\"],\"columns[2].isList\":[\"1\"],\"columns[2].isQuery\":[\"1\"],\"columns[2].queryType\":[\"EQ\"],\"columns[2].isRequired\":[\"1\"],\"columns[2].htmlType\":[\"datetime\"],\"columns[2].dictType\":[\"\"],\"columns[3].columnId\":[\"67\"],\"columns[3].sort\":[\"4\"],\"columns[3].columnComment\":[\"司機名稱\"],\"columns[3].javaType\":[\"String\"],\"columns[3].javaField\":[\"gonorthDriver\"],\"columns[3].isInsert\":[\"1\"],\"columns[3].isEdit\":[\"1\"],\"columns[3].isList\":[\"1\"],\"columns[3].isQuery\":[\"1\"],\"columns[3].queryType\":[\"LIKE\"],\"columns[3].isRequired\":[\"1\"],\"columns[3].htmlType\":[\"input\"],\"columns[3].dictType\":[\"\"],\"columns[4].columnId\":[\"68\"],\"columns[4].sort\":[\"5\"],\"columns[4].columnComment\":[\"車牌號碼\"],\"columns[4].javaType\":[\"String\"],\"columns[4].javaField\":[\"gonorthLicensePlateNumber\"],\"columns[4].isInsert\":[\"1\"],\"columns[4].isEdit\":[\"1\"],\"columns[4].isList\":[\"1\"],\"columns[4].isQuery\":[\"1\"],\"columns[4].queryType\":[\"LIKE\"],\"columns[4].isRequired\":[\"1\"],\"columns[4].htmlType\":[\"input\"],\"columns[4].dictType\":[\"\"],\"columns[5].columnId\":[\"', '{\"msg\":\"操作成功\",\"code\":0}', '0', null, '2022-02-19 16:46:28');
+INSERT INTO `sys_oper_log` VALUES ('279', '代码生成', '8', 'com.ruoyi.generator.controller.GenController.download()', 'GET', '1', 'admin', '研发部门', '/tool/gen/download/ks_gonorth', '127.0.0.1', '内网IP', '\"ks_gonorth\"', null, '0', null, '2022-02-19 16:46:31');
 
 -- ----------------------------
 -- Table structure for sys_post
@@ -1481,7 +1528,7 @@ CREATE TABLE `sys_user` (
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES ('1', '103', 'admin', '若依', '00', 'ry@163.com', '15888888888', '1', '', '29c67a30398638269fe600f73a054934', '111111', '0', '0', '127.0.0.1', '2022-02-19 03:10:30', '2022-02-08 12:56:01', 'admin', '2022-02-08 12:56:01', '', '2022-02-19 03:10:30', '管理员');
+INSERT INTO `sys_user` VALUES ('1', '103', 'admin', '若依', '00', 'ry@163.com', '15888888888', '1', '', '29c67a30398638269fe600f73a054934', '111111', '0', '0', '127.0.0.1', '2022-02-19 16:46:54', '2022-02-08 12:56:01', 'admin', '2022-02-08 12:56:01', '', '2022-02-19 16:46:54', '管理员');
 INSERT INTO `sys_user` VALUES ('2', '105', 'ry', '若依', '00', 'ry@qq.com', '15666666666', '1', '', '8e6d98b90472783cc73c17047ddccf36', '222222', '0', '0', '127.0.0.1', '2022-02-08 12:56:01', '2022-02-08 12:56:01', 'admin', '2022-02-08 12:56:01', '', null, '测试员');
 INSERT INTO `sys_user` VALUES ('100', null, 'fatboy', '阿忠', '00', '', '', '男', '', 'e811eb46aebc66ccc5102a69b2d96864', '3d988f', '0', '0', '127.0.0.1', '2022-02-08 22:33:21', null, 'admin', '2022-02-08 22:33:04', '', '2022-02-08 22:33:21', '低能兒');
 
@@ -1507,7 +1554,7 @@ CREATE TABLE `sys_user_online` (
 -- ----------------------------
 -- Records of sys_user_online
 -- ----------------------------
-INSERT INTO `sys_user_online` VALUES ('abafaae4-df2b-46e8-afe7-459a2c51fb10', 'admin', '研发部门', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', 'on_line', '2022-02-19 02:50:53', '2022-02-19 03:24:54', '1800000');
+INSERT INTO `sys_user_online` VALUES ('c3c0ca52-b3a0-49da-9c72-6eef336ea5f2', 'admin', '研发部门', '127.0.0.1', '内网IP', 'Chrome 9', 'Windows 10', 'on_line', '2022-02-19 16:22:52', '2022-02-19 16:46:54', '1800000');
 
 -- ----------------------------
 -- Table structure for sys_user_post
